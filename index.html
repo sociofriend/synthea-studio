@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Synthéa</title>
-<meta name="description" content="Synthéa designs the concept, the brand and the product as one system, then builds it. Not less human. More self-defined.">
+<meta name="description" content="Synthéa designs the concept and the brand, then builds them into native apps with Swift and SwiftUI. Not less human. More self-defined.">
 <meta name="theme-color" content="#090B10" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://sociofriend.github.io/synthea-studio/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Synthéa">
-<meta property="og:description" content="Concept, brand and product, designed as one system and built. Not less human. More self-defined.">
+<meta property="og:description" content="Concept, brand and native app, designed as one system and built in Swift. Not less human. More self-defined.">
 <meta property="og:url" content="https://sociofriend.github.io/synthea-studio/">
 <meta property="og:image" content="https://sociofriend.github.io/synthea-studio/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -23,7 +23,7 @@
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="assets/fonts/manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/cormorant-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
@@ -47,6 +47,7 @@
     <nav class="nav__links" aria-label="Sections">
       <a href="#promise">Promise</a>
       <a href="#work">Work</a>
+      <a href="#code">Code</a>
       <a href="#system">System</a>
       <a href="#evolution">Evolution</a>
       <a href="#services">Services</a>
@@ -65,24 +66,49 @@
 <main id="main">
 
 <section class="hero" aria-labelledby="hero-title">
-  <canvas class="hero__ground" id="heroGround" aria-hidden="true"></canvas>
-  <canvas class="hero__stage" id="heroStage" aria-hidden="true"></canvas>
   <div class="wrap hero__inner">
-    <p class="eyebrow">Concept · Brand · Product</p>
-    <h1 class="hero__title" id="hero-title">Synthéa</h1>
-    <p class="hero__motto">Not less human. More self-defined.</p>
-    <p class="hero__lead">I design the concept, the brand and the product as one system, then I build it. This site shows how: my own identity, taken from a written guidebook to a complete, working brand.</p>
-    <div class="hero__actions">
-      <a class="btn btn--primary" href="#work">See the work</a>
-      <a class="btn btn--ghost" href="#promise">Read the promise</a>
+    <div class="hero__text">
+      <p class="eyebrow">iOS developer · Brand systems</p>
+      <h1 class="hero__title" id="hero-title">Synthéa</h1>
+      <p class="hero__motto">Not less human. More self-defined.</p>
+      <p class="hero__lead">I design the concept and the brand, then build them into native apps with Swift and SwiftUI. One system, from the first idea to the code that ships.</p>
+      <ul class="stack" aria-label="Tools">
+        <li>Swift</li><li>SwiftUI</li><li>Combine</li><li>MVVM</li><li>Human Interface Guidelines</li>
+      </ul>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#work">See the work</a>
+        <a class="btn btn--ghost" href="#code">Read the code</a>
+      </div>
+      <div class="say">
+        <button class="say__btn" type="button" id="sayIt" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+          <span>Hear it</span>
+        </button>
+        <span class="say__text">Say it <b>sin-THAY-uh</b> <span class="say__ipa">/sɪnˈθeɪ.ə/</span></span>
+      </div>
     </div>
-    <div class="say">
-      <button class="say__btn" type="button" id="sayIt" hidden>
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
-        <span>Hear it</span>
-      </button>
-      <span class="say__text">Say it <b>sin-THAY-uh</b> <span class="say__ipa">/sɪnˈθeɪ.ə/</span></span>
-    </div>
+
+    <figure class="device hero__device">
+      <div class="device__screen" id="heroScreen">
+        <canvas class="device__layer" id="heroGround" aria-hidden="true"></canvas>
+        <canvas class="device__layer" id="heroStage" aria-hidden="true"></canvas>
+        <div class="lock" aria-hidden="true">
+          <p class="lock__date">Tuesday 9 January</p>
+          <p class="lock__time">9:41</p>
+        </div>
+        <div class="notice glass" aria-hidden="true">
+          <span class="app-icon"><svg viewBox="0 0 120 120"><use href="#emblem"/></svg></span>
+          <div class="notice__body">
+            <p class="notice__head"><b>Synthéa</b><span>now</span></p>
+            <p><b>Field note</b></p>
+            <p>I choose where my attention goes.</p>
+          </div>
+        </div>
+        <span class="device__island" aria-hidden="true"></span>
+        <span class="device__home" aria-hidden="true"></span>
+      </div>
+      <figcaption class="sr-only">A phone lock screen. Its wallpaper is the live Synthéa pearl, drawn in code, with a field note notification below it.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -90,25 +116,29 @@
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">The promise</p>
-      <h2 id="promise-title">What you can hold me to</h2>
-      <p class="section__lead">Clients get one person who keeps meaning, image and code in the same hands. These are the terms.</p>
+      <h2 id="promise-title">What you can <em>hold me to</em></h2>
+      <p class="section__lead">You get one person who keeps meaning, image and code in the same hands. These are the terms.</p>
     </header>
     <ul class="promises">
       <li class="promise">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3c.7 4.6 2.4 6.3 7 7-4.6.7-6.3 2.4-7 7-.7-4.6-2.4-6.3-7-7 4.6-.7 6.3-2.4 7-7Z"/><path d="M19 16.5c.3 1.6.9 2.2 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.3 2.2-.9 2.5-2.5Z"/></svg></span>
         <h3>Meaning comes first</h3>
-        <p>Every project starts with what it believes, who it serves and what it refuses. The visuals answer to that.</p>
+        <p>Every project starts with what it believes, who it serves and what it refuses. The visuals and the code answer to that.</p>
       </li>
       <li class="promise">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg></span>
         <h3>One system, end to end</h3>
-        <p>Concept, brand and product share one set of tokens, one voice and one logic, from the guidebook to the shipped code.</p>
+        <p>Concept, brand and app share one set of tokens, one voice and one logic, from the guidebook to the Swift that ships.</p>
       </li>
       <li class="promise">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="3"/><path d="M10.5 5.5h3"/></svg></span>
         <h3>Every surface is designed</h3>
-        <p>Avatars, banners, posts, pages and apps are composed for their real size, crop and safe areas, instead of resized from one master.</p>
+        <p>App screens, icons, banners and posts are composed for their real size, safe areas and crop, instead of resized from one master.</p>
       </li>
       <li class="promise">
+        <span class="tile" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="7" r="2"/><path d="M6 7v10M18 9c0 5-7 4-11 8.5"/></svg></span>
         <h3>Every change is traceable</h3>
-        <p>Each version is kept, compared and explained. You can see why something changed and return to any earlier state.</p>
+        <p>Each version lives on its own branch, compared and explained. You can see why something changed and return to any earlier state.</p>
       </li>
     </ul>
     <p class="signature"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg><span>Synthéa</span></p>
@@ -119,7 +149,7 @@
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Case study · Synthéa</p>
-      <h2 id="work-title">An identity built like software</h2>
+      <h2 id="work-title">An identity built <em>like software</em></h2>
       <p class="section__lead">The first client was me. Synthéa started as a written guidebook with a persona, a philosophy and a manifesto, and no images at all. I turned it into a versioned identity system that renders every asset from code.</p>
     </header>
     <dl class="facts">
@@ -159,10 +189,21 @@
           <span class="stage__step">Brand</span>
           <h3>The Synthetic Pearl</h3>
           <p>One luminous pearl carries the identity. Its glass stands for technology and its opal sheen keeps it soft. The quiet signal inside is thought in motion, and the offset orbit is continuous change.</p>
+          <p>As an app icon it keeps its glass, and it stays legible from the 1024-pixel App Store master down to a 20-point notification.</p>
           <a class="link" href="#system">Explore the system</a>
         </div>
-        <figure class="stage__media">
-          <img src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt="The Synthéa avatar: a silver glass pearl with a fine signal inside, on obsidian">
+        <figure class="stage__media icons">
+          <div class="icons__main">
+            <div><img class="app-icon-img" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt="App icon in the dark appearance: the silver pearl on obsidian"><span>Dark</span></div>
+            <div><img class="app-icon-img" src="assets/img/avatar-pearl-light.webp" width="720" height="720" loading="lazy" decoding="async" alt="App icon in the light appearance: the pearl on soft white"><span>Light</span></div>
+          </div>
+          <ul class="icons__sizes">
+            <li><img class="app-icon-img" style="--pt:60px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>60 pt<br>Home Screen</span></li>
+            <li><img class="app-icon-img" style="--pt:40px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>40 pt<br>Spotlight</span></li>
+            <li><img class="app-icon-img" style="--pt:29px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>29 pt<br>Settings</span></li>
+            <li><img class="app-icon-img" style="--pt:20px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>20 pt<br>Notification</span></li>
+          </ul>
+          <figcaption>The icon at its real iPhone sizes, in points.</figcaption>
         </figure>
       </li>
       <li class="stage">
@@ -184,12 +225,146 @@
   </div>
 </section>
 
-<section class="section" id="system" aria-labelledby="system-title">
+<section class="section" id="code" aria-labelledby="code-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Engineering</p>
+      <h2 id="code-title">The same pearl, <em>native</em></h2>
+      <p class="section__lead">On this page the pearl is drawn with Canvas 2D. For iPhone it is a SwiftUI <code>Canvas</code> inside a <code>TimelineView</code>, driven by a view model that publishes with Combine and pauses when Reduce Motion is on or the view leaves the screen.</p>
+    </header>
+
+    <div class="xcode" id="codeView">
+      <div class="xcode__bar">
+        <span class="xcode__lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="xcode__crumbs" aria-hidden="true">Synthéa <span>›</span> <span class="xcode__folder"></span> <span>›</span> <b class="xcode__file"></b></span>
+      </div>
+      <div class="xcode__body">
+        <div class="xcode__nav">
+          <p class="xcode__project"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H9l2 2h8.5A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-10Z"/></svg>Synthéa</p>
+          <div class="xcode__files" role="tablist" aria-label="Source files">
+            <button class="file" type="button" role="tab" id="file-view" aria-controls="src-view" data-folder="Views"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>PearlView.swift</span></button>
+            <button class="file" type="button" role="tab" id="file-vm" aria-controls="src-vm" data-folder="ViewModels"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>PearlViewModel.swift</span></button>
+            <button class="file" type="button" role="tab" id="file-render" aria-controls="src-render" data-folder="Rendering"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>GraphicsContext+Pearl.swift</span></button>
+          </div>
+        </div>
+        <div class="xcode__editor">
+          <div class="xcode__src" role="tabpanel" id="src-view" aria-labelledby="file-view" tabindex="0"><pre><code data-src="native/Synthea/Views/PearlView.swift"><span class="line"><span class="kw">import</span> <span class="t">SwiftUI</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">/// The live Synthetic Pearl: drawn every frame while visible, still for Reduce Motion.</span></span>
+<span class="line"><span class="kw">struct</span> <span class="t">PearlView</span>: <span class="t">View</span> {</span>
+<span class="line">    <span class="a">@StateObject</span> <span class="kw">private</span> <span class="kw">var</span> model = <span class="t">PearlViewModel</span>()</span>
+<span class="line">    <span class="a">@Environment</span>(<span class="k">\.accessibilityReduceMotion</span>) <span class="kw">private</span> <span class="kw">var</span> reduceMotion</span>
+<span class="line"></span>
+<span class="line">    <span class="kw">var</span> body: <span class="kw">some</span> <span class="t">View</span> {</span>
+<span class="line">        <span class="t">TimelineView</span>(.<span class="f">animation</span>(paused: model.<span class="m">isPaused</span>)) { timeline <span class="kw">in</span></span>
+<span class="line">            <span class="t">Canvas</span> { context, size <span class="kw">in</span></span>
+<span class="line">                <span class="kw">let</span> center = <span class="t">CGPoint</span>(x: size.<span class="m">width</span> / <span class="n">2</span>, y: size.<span class="m">height</span> / <span class="n">2</span>)</span>
+<span class="line">                <span class="kw">let</span> radius = <span class="f">min</span>(size.<span class="m">width</span>, size.<span class="m">height</span>) * <span class="n">0.36</span></span>
+<span class="line">                context.<span class="f">drawPearl</span>(at: center, radius: radius)</span>
+<span class="line">                context.<span class="f">drawSignal</span>(at: center, radius: radius * <span class="n">0.56</span>,</span>
+<span class="line">                                   phase: model.<span class="f">phase</span>(at: timeline.<span class="m">date</span>))</span>
+<span class="line">            }</span>
+<span class="line">        }</span>
+<span class="line">        .<span class="f">onChange</span>(of: reduceMotion, initial: <span class="kw">true</span>) { model.<span class="m">reduceMotion</span> = $<span class="n">1</span> }</span>
+<span class="line">        .<span class="m">onAppear</span> { model.<span class="m">isOnScreen</span> = <span class="kw">true</span> }</span>
+<span class="line">        .<span class="m">onDisappear</span> { model.<span class="m">isOnScreen</span> = <span class="kw">false</span> }</span>
+<span class="line">        .<span class="f">accessibilityElement</span>(children: .<span class="m">ignore</span>)</span>
+<span class="line">        .<span class="f">accessibilityLabel</span>(<span class="s">"Synthéa, a glass pearl with a signal inside"</span>)</span>
+<span class="line">        .<span class="f">accessibilityAddTraits</span>(.<span class="m">isImage</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="a">#Preview</span> {</span>
+<span class="line">    <span class="t">PearlView</span>()</span>
+<span class="line">        .<span class="f">frame</span>(width: <span class="n">320</span>, height: <span class="n">320</span>)</span>
+<span class="line">        .<span class="f">background</span>(<span class="t">Color</span>.<span class="m">obsidian</span>)</span>
+<span class="line">}</span></code></pre></div>
+          <div class="xcode__src" role="tabpanel" id="src-vm" aria-labelledby="file-vm" tabindex="0"><pre><code data-src="native/Synthea/ViewModels/PearlViewModel.swift"><span class="line"><span class="kw">import</span> <span class="t">Combine</span></span>
+<span class="line"><span class="kw">import</span> <span class="t">Foundation</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">/// Drives the pearl. The view reports what it knows; the model decides when to animate.</span></span>
+<span class="line"><span class="a">@MainActor</span></span>
+<span class="line"><span class="kw">final</span> <span class="kw">class</span> <span class="t">PearlViewModel</span>: <span class="t">ObservableObject</span> {</span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">var</span> reduceMotion = <span class="kw">false</span></span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">var</span> isOnScreen = <span class="kw">false</span></span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">private</span>(<span class="kw">set</span>) <span class="kw">var</span> isPaused = <span class="kw">true</span></span>
+<span class="line"></span>
+<span class="line">    <span class="kw">init</span>() {</span>
+<span class="line">        <span class="k">$reduceMotion</span></span>
+<span class="line">            .<span class="f">combineLatest</span>(<span class="k">$isOnScreen</span>)</span>
+<span class="line">            .<span class="m">map</span> { reduceMotion, isOnScreen <span class="kw">in</span> reduceMotion || !isOnScreen }</span>
+<span class="line">            .<span class="f">removeDuplicates</span>()</span>
+<span class="line">            .<span class="f">assign</span>(to: &amp;<span class="k">$isPaused</span>)</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    <span class="c">/// The signal's phase at a moment. Near π/2 the curve crosses the core.</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">phase</span>(at date: <span class="t">Date</span>) -&gt; <span class="t">Double</span> {</span>
+<span class="line">        <span class="t">Double</span>.<span class="m">pi</span> / <span class="n">2</span> + <span class="n">0.22</span> * <span class="f">sin</span>(date.<span class="m">timeIntervalSinceReferenceDate</span> * <span class="n">0.35</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+          <div class="xcode__src" role="tabpanel" id="src-render" aria-labelledby="file-render" tabindex="0"><pre><code data-src="native/Synthea/Rendering/GraphicsContext+Pearl.swift"><span class="line"><span class="kw">import</span> <span class="t">SwiftUI</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">// Brand colours live in the asset catalog with light and dark variants;</span></span>
+<span class="line"><span class="c">// Xcode generates Color.obsidian, .pearl, .icy, .violet and .nacre.</span></span>
+<span class="line"></span>
+<span class="line"><span class="kw">extension</span> <span class="t">GraphicsContext</span> {</span>
+<span class="line">    <span class="c">/// Glass body, opal sheen and a fine rim, drawn back to front.</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">drawPearl</span>(at c: <span class="t">CGPoint</span>, radius r: <span class="t">CGFloat</span>) {</span>
+<span class="line">        <span class="kw">let</span> body = <span class="t">Path</span>(ellipseIn: <span class="t">CGRect</span>(x: c.<span class="m">x</span> - r, y: c.<span class="m">y</span> - r, width: <span class="n">2</span> * r, height: <span class="n">2</span> * r))</span>
+<span class="line">        <span class="f">fill</span>(body, with: .<span class="f">radialGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">pearl</span>, .<span class="m">pearl</span>.<span class="f">opacity</span>(<span class="n">0.35</span>), .<span class="m">obsidian</span>]),</span>
+<span class="line">            center: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> - r * <span class="n">0.35</span>, y: c.<span class="m">y</span> - r * <span class="n">0.4</span>),</span>
+<span class="line">            startRadius: <span class="n">0</span>, endRadius: r * <span class="n">1.4</span>))</span>
+<span class="line"></span>
+<span class="line">        <span class="kw">var</span> sheen = <span class="kw">self</span></span>
+<span class="line">        sheen.<span class="m">blendMode</span> = .<span class="m">softLight</span></span>
+<span class="line">        sheen.<span class="f">fill</span>(body, with: .<span class="f">conicGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">nacre</span>, .<span class="m">violet</span>, .<span class="m">icy</span>, .<span class="m">nacre</span>]),</span>
+<span class="line">            center: c, angle: .<span class="f">degrees</span>(-<span class="n">30</span>)))</span>
+<span class="line"></span>
+<span class="line">        <span class="f">stroke</span>(body, with: .<span class="f">color</span>(.<span class="m">pearl</span>.<span class="f">opacity</span>(<span class="n">0.5</span>)), lineWidth: <span class="n">1</span>)</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    <span class="c">/// The 3:2 Lissajous signal: x = r·sin(3t + phase), y = r·sin(2t).</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">drawSignal</span>(at c: <span class="t">CGPoint</span>, radius r: <span class="t">CGFloat</span>, phase: <span class="t">Double</span>) {</span>
+<span class="line">        <span class="kw">var</span> path = <span class="t">Path</span>()</span>
+<span class="line">        <span class="kw">for</span> step <span class="kw">in</span> <span class="n">0</span>...<span class="n">360</span> {</span>
+<span class="line">            <span class="kw">let</span> t = <span class="t">Double</span>(step) / <span class="n">360</span> * <span class="n">2</span> * .<span class="m">pi</span></span>
+<span class="line">            <span class="kw">let</span> point = <span class="t">CGPoint</span>(x: c.<span class="m">x</span> + r * <span class="f">sin</span>(<span class="n">3</span> * t + phase), y: c.<span class="m">y</span> + r * <span class="f">sin</span>(<span class="n">2</span> * t))</span>
+<span class="line">            <span class="kw">if</span> step == <span class="n">0</span> { path.<span class="f">move</span>(to: point) } <span class="kw">else</span> { path.<span class="f">addLine</span>(to: point) }</span>
+<span class="line">        }</span>
+<span class="line">        <span class="f">stroke</span>(path, with: .<span class="f">linearGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">violet</span>, .<span class="m">icy</span>]),</span>
+<span class="line">            startPoint: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> - r, y: c.<span class="m">y</span>),</span>
+<span class="line">            endPoint: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> + r, y: c.<span class="m">y</span>)), lineWidth: <span class="n">1</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+        </div>
+      </div>
+      <div class="xcode__status">
+        <span>Swift · SwiftUI · Combine · iOS 17 or later</span>
+        <a href="https://github.com/sociofriend/synthea-studio/tree/main/native" rel="noopener">View the source</a>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3 class="block__title">Built in from the first line</h3>
+      <ul class="checks">
+        <li><b>Reduce Motion</b><span>When the setting is on, the pearl holds still, on this page and on iPhone.</span></li>
+        <li><b>Dark and Light</b><span>Every colour is a token with both appearances, so the switch is one line.</span></li>
+        <li><b>VoiceOver</b><span>Images carry labels, and decoration stays silent.</span></li>
+        <li><b>Battery</b><span>Drawing pauses off-screen, and the static layers are drawn once and cached.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raised" id="system" aria-labelledby="system-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Identity system</p>
-      <h2 id="system-title">The pieces, and how they behave</h2>
-      <p class="section__lead">A small set of parts with clear rules, so the identity stays recognisable everywhere it appears.</p>
+      <h2 id="system-title">The pieces, and <em>how they behave</em></h2>
+      <p class="section__lead">A small set of parts with clear rules, so the identity stays recognisable everywhere it appears, from a profile to an app icon.</p>
     </header>
 
     <div class="block">
@@ -221,9 +396,10 @@
       <div>
         <h3 class="block__title">Type</h3>
         <dl class="specimens">
-          <div><dt>Wordmark and interface · Manrope</dt><dd class="specimen specimen--wordmark">Synthéa</dd></div>
+          <div><dt>Wordmark · Manrope</dt><dd class="specimen specimen--wordmark">Synthéa</dd></div>
           <div><dt>Editorial voice · Cormorant Garamond Italic</dt><dd class="specimen specimen--editorial">I choose where my attention goes.</dd></div>
-          <div><dt>Signal and data · IBM Plex Mono</dt><dd class="specimen specimen--mono">FIELD NOTE · AGENTS · structure the task, check the output.</dd></div>
+          <div><dt>Interface · the system font, SF Pro on Apple devices</dt><dd class="specimen specimen--ui">Field note · Agents</dd></div>
+          <div><dt>Signal and code · SF Mono, IBM Plex Mono elsewhere</dt><dd class="specimen specimen--mono">structure the task, check the output.</dd></div>
         </dl>
       </div>
       <div>
@@ -244,7 +420,7 @@
     <div class="block block--split">
       <div>
         <h3 class="block__title">Two appearances</h3>
-        <p class="block__text">Obsidian is the default ground. Soft White carries quotes and carousels. This site follows your device setting, and the switch at the top lets you try both.</p>
+        <p class="block__text">Obsidian is the default ground. Soft White carries quotes and carousels. This site follows your device setting, like an app does, and the switch at the top lets you try both.</p>
       </div>
       <div class="modes">
         <img src="assets/img/post-note.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Obsidian appearance: a field note post">
@@ -254,31 +430,31 @@
   </div>
 </section>
 
-<section class="section section--raised" id="surfaces" aria-labelledby="surfaces-title">
+<section class="section" id="surfaces" aria-labelledby="surfaces-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Representation</p>
-      <h2 id="surfaces-title">On every surface</h2>
+      <h2 id="surfaces-title">On every <em>surface</em></h2>
       <p class="section__lead">Real files, ready to upload. Select any of them to see it larger.</p>
     </header>
     <ul class="gallery" id="gallery">
-      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-x.webp"><img src="assets/img/banner-x.webp" width="1500" height="500" loading="lazy" decoding="async" alt="X header, 1500 by 500"></button><span>X header · 1500 × 500</span></li>
-      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-linkedin.webp"><img src="assets/img/banner-linkedin.webp" width="1584" height="396" loading="lazy" decoding="async" alt="LinkedIn background in the light appearance, 1584 by 396"></button><span>LinkedIn · 1584 × 396</span></li>
-      <li class="gallery__item gallery__item--half"><button type="button" data-full="assets/img/github-social.webp"><img src="assets/img/github-social.webp" width="1280" height="640" loading="lazy" decoding="async" alt="GitHub social preview with the Synthetic Mind pearl"></button><span>GitHub preview · 1280 × 640</span></li>
-      <li class="gallery__item gallery__item--half"><button type="button" data-full="assets/img/banner-youtube.webp"><img src="assets/img/banner-youtube.webp" width="1600" height="900" loading="lazy" decoding="async" alt="YouTube channel art with the wordmark inside the safe area"></button><span>YouTube · 2560 × 1440</span></li>
-      <li class="gallery__item"><button type="button" data-full="assets/img/post-quote.webp"><img src="assets/img/post-quote.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Quote post in the light appearance"></button><span>Quote post · 4:5</span></li>
-      <li class="gallery__item"><button type="button" data-full="assets/img/carousel-0.webp"><img src="assets/img/carousel-0.webp" width="640" height="800" loading="lazy" decoding="async" alt="Carousel cover: Six principles for a self-defined life"></button><span>Carousel · 7 slides</span></li>
-      <li class="gallery__item"><button type="button" data-full="assets/img/story.webp"><img src="assets/img/story.webp" width="600" height="1067" loading="lazy" decoding="async" alt="Story: A mind in transition"></button><span>Story · 9:16</span></li>
-      <li class="gallery__item"><button type="button" data-full="assets/img/story-manifesto.webp"><img src="assets/img/story-manifesto.webp" width="600" height="1067" loading="lazy" decoding="async" alt="The full manifesto as a story"></button><span>Manifesto story · 9:16</span></li>
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-x.webp"><img src="assets/img/banner-x.webp" width="1500" height="500" loading="lazy" decoding="async" alt="X header, 1500 by 500"></button><span class="gallery__caption">X header · 1500 × 500</span></li>
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-linkedin.webp"><img src="assets/img/banner-linkedin.webp" width="1584" height="396" loading="lazy" decoding="async" alt="LinkedIn background in the light appearance, 1584 by 396"></button><span class="gallery__caption">LinkedIn · 1584 × 396</span></li>
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/github-social.webp"><img src="assets/img/github-social.webp" width="1280" height="640" loading="lazy" decoding="async" alt="GitHub social preview with the Synthetic Mind pearl"></button><span class="gallery__caption">GitHub preview · 1280 × 640</span></li>
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-youtube.webp"><img src="assets/img/banner-youtube.webp" width="1600" height="900" loading="lazy" decoding="async" alt="YouTube channel art with the wordmark inside the safe area"></button><span class="gallery__caption">YouTube · 2560 × 1440</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/post-quote.webp"><img src="assets/img/post-quote.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Quote post in the light appearance"></button><span class="gallery__caption">Quote post · 4:5</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/carousel-0.webp"><img src="assets/img/carousel-0.webp" width="640" height="800" loading="lazy" decoding="async" alt="Carousel cover: Six principles for a self-defined life"></button><span class="gallery__caption">Carousel · 7 slides</span></li>
+      <li class="gallery__item gallery__item--phone"><button type="button" data-full="assets/img/story.webp"><span class="device device--sm"><span class="device__screen"><img src="assets/img/story.webp" width="600" height="1067" loading="lazy" decoding="async" alt="Story on a phone: A mind in transition"><span class="device__island"></span></span></span></button><span class="gallery__caption">Story · 9:16, on iPhone</span></li>
+      <li class="gallery__item gallery__item--phone"><button type="button" data-full="assets/img/story-manifesto.webp"><span class="device device--sm"><span class="device__screen"><img src="assets/img/story-manifesto.webp" width="600" height="1067" loading="lazy" decoding="async" alt="The full manifesto as a story, on a phone"><span class="device__island"></span></span></span></button><span class="gallery__caption">Manifesto story · 9:16, on iPhone</span></li>
     </ul>
   </div>
 </section>
 
-<section class="section" id="evolution" aria-labelledby="evolution-title">
+<section class="section section--raised" id="evolution" aria-labelledby="evolution-title">
   <div class="wrap">
     <header class="section__head">
-      <p class="eyebrow">Process</p>
-      <h2 id="evolution-title">How the identity evolved</h2>
+      <p class="eyebrow">Version control</p>
+      <h2 id="evolution-title">How the identity <em>evolved</em></h2>
       <p class="section__lead">Each version lives on its own branch, so every decision can be compared and reversed. The retired version stays in the history too, because it showed where the line was.</p>
     </header>
     <div class="evolution" id="evolutionView">
@@ -295,25 +471,29 @@
   </div>
 </section>
 
-<section class="section section--raised" id="services" aria-labelledby="services-title">
+<section class="section" id="services" aria-labelledby="services-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Services</p>
-      <h2 id="services-title">What I build</h2>
+      <h2 id="services-title">What I <em>build</em></h2>
     </header>
     <ul class="services">
-      <li><h3>Identity systems</h3><p>Concept, naming, guidebook and visual language, delivered as a living kit that regenerates every asset from code.</p></li>
-      <li><h3>Apps</h3><p>Native apps for Apple platforms with SwiftUI, MVVM and Combine, and fast, accessible web apps like this one.</p></li>
+      <li>
+        <h3>Native apps</h3>
+        <p>iPhone and iPad apps in Swift and SwiftUI, structured as MVVM with Combine and shaped by Apple's Human Interface Guidelines from the first screen.</p>
+        <ul class="stack stack--small" aria-label="Tools"><li>Swift</li><li>SwiftUI</li><li>Combine</li></ul>
+      </li>
+      <li><h3>Identity systems</h3><p>Concept, naming, guidebook and visual language, delivered as a living kit that regenerates every asset from code, app icon included.</p></li>
       <li><h3>AI and agent workflows</h3><p>Structured, checkable agent workflows, from first prototype to a system people can rely on.</p></li>
-      <li><h3>Launch and presence</h3><p>Profiles, content templates and launch kits that keep one voice across every platform.</p></li>
+      <li><h3>Launch and presence</h3><p>App Store pages, profiles, content templates and launch kits that keep one voice across every platform.</p></li>
     </ul>
     <h3 class="block__title">How a project runs</h3>
     <ol class="process">
       <li><b>Listen</b><span>What it believes, who it is for, what it refuses.</span></li>
       <li><b>Define</b><span>A written concept you can agree with before anything is drawn.</span></li>
       <li><b>Design</b><span>Directions shown small, then the chosen one built out in full.</span></li>
-      <li><b>Build</b><span>The product and the kit, from the same tokens.</span></li>
-      <li><b>Evolve</b><span>Versioned changes, each one explained and reversible.</span></li>
+      <li><b>Build</b><span>The app and the kit, from the same tokens.</span></li>
+      <li><b>Evolve</b><span>Versioned releases, each one explained and reversible.</span></li>
     </ol>
   </div>
 </section>
@@ -321,8 +501,8 @@
 <section class="section closing" id="contact" aria-labelledby="contact-title">
   <div class="wrap closing__inner">
     <p class="closing__manifesto">I am allowed to change.<br>I am allowed to build.<br>I am allowed to define myself.</p>
-    <h2 id="contact-title">Have a concept that deserves a coherent form?</h2>
-    <p class="section__lead">Tell me what it believes and who it is for. I will answer with how I would shape it.</p>
+    <h2 id="contact-title">Have a concept that deserves a <em>coherent form?</em></h2>
+    <p class="section__lead">Tell me what it believes and who it is for. I will answer with how I would shape it, and how I would build it.</p>
     <div class="closing__actions">
       <a class="btn btn--primary" id="contactPrimary" href="https://github.com/sociofriend" rel="noopener">Contact on GitHub</a>
       <span class="closing__address" id="contactAddress" hidden></span>
@@ -335,7 +515,8 @@
 <footer class="footer">
   <div class="wrap footer__inner">
     <p class="footer__brand"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg><span>Synthéa · a self-authored identity, evolving by design.</span></p>
-    <p class="footer__colophon">Hand-built with HTML, CSS and JavaScript. No frameworks, no trackers. Set in Manrope, Cormorant Garamond and IBM Plex Mono. Every image on this site is rendered from code.</p>
+    <p class="footer__colophon">Hand-built with HTML, CSS and JavaScript, with no frameworks and no trackers. Set in SF Pro on Apple devices, with Manrope, Cormorant Garamond and IBM Plex Mono. Every image on this site is rendered from code.</p>
+    <p class="footer__colophon">Apple, iPhone, iPad, iOS, Swift, SwiftUI and Xcode are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
     <p class="footer__meta"><span>© 2026 Synthéa</span><span>Say it sin-THAY-uh</span><a href="#top">Back to top</a></p>
   </div>
 </footer>
