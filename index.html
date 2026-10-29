@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Synthéa</title>
+<meta name="description" content="Synthéa designs the concept, the brand and the product as one system, then builds it. Not less human. More self-defined.">
+<meta name="theme-color" content="#090B10" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F7FB" media="(prefers-color-scheme: light)">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://sociofriend.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Synthéa">
+<meta property="og:description" content="Concept, brand and product, designed as one system and built. Not less human. More self-defined.">
+<meta property="og:url" content="https://sociofriend.github.io/">
+<meta property="og:image" content="https://sociofriend.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Synthéa wordmark beside a luminous silver pearl on obsidian">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="assets/fonts/manrope-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<script>
+  // Apply a saved appearance before first paint, so the page never flashes the other theme.
+  try { const t = localStorage.getItem('synthea.appearance'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch {}
+</script>
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav__inner">
+    <a class="nav__brand" href="#top" aria-label="Synthéa, back to top">
+      <svg class="nav__mark" viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg>
+      <span>Synthéa</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#promise">Promise</a>
+      <a href="#work">Work</a>
+      <a href="#system">System</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#services">Services</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" type="button" id="appearanceToggle" aria-pressed="false">
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span class="sr-only" id="appearanceLabel">Switch to light appearance</span>
+      </button>
+      <a class="btn btn--primary btn--small" href="#contact">Start a project</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero__ground" id="heroGround" aria-hidden="true"></canvas>
+  <canvas class="hero__stage" id="heroStage" aria-hidden="true"></canvas>
+  <div class="wrap hero__inner">
+    <p class="eyebrow">Concept · Brand · Product</p>
+    <h1 class="hero__title" id="hero-title">Synthéa</h1>
+    <p class="hero__motto">Not less human. More self-defined.</p>
+    <p class="hero__lead">I design the concept, the brand and the product as one system, then I build it. This site shows how: my own identity, taken from a written guidebook to a complete, working brand.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#work">See the work</a>
+      <a class="btn btn--ghost" href="#promise">Read the promise</a>
+    </div>
+    <div class="say">
+      <button class="say__btn" type="button" id="sayIt" hidden>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+        <span>Hear it</span>
+      </button>
+      <span class="say__text">Say it <b>sin-THAY-uh</b> <span class="say__ipa">/sɪnˈθeɪ.ə/</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="promise" aria-labelledby="promise-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">The promise</p>
+      <h2 id="promise-title">What you can hold me to</h2>
+      <p class="section__lead">Clients get one person who keeps meaning, image and code in the same hands. These are the terms.</p>
+    </header>
+    <ul class="promises">
+      <li class="promise">
+        <h3>Meaning comes first</h3>
+        <p>Every project starts with what it believes, who it serves and what it refuses. The visuals answer to that.</p>
+      </li>
+      <li class="promise">
+        <h3>One system, end to end</h3>
+        <p>Concept, brand and product share one set of tokens, one voice and one logic, from the guidebook to the shipped code.</p>
+      </li>
+      <li class="promise">
+        <h3>Every surface is designed</h3>
+        <p>Avatars, banners, posts, pages and apps are composed for their real size, crop and safe areas, instead of resized from one master.</p>
+      </li>
+      <li class="promise">
+        <h3>Every change is traceable</h3>
+        <p>Each version is kept, compared and explained. You can see why something changed and return to any earlier state.</p>
+      </li>
+    </ul>
+    <p class="signature"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg><span>Synthéa</span></p>
+  </div>
+</section>
+
+<section class="section section--raised" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Case study · Synthéa</p>
+      <h2 id="work-title">An identity built like software</h2>
+      <p class="section__lead">The first client was me. Synthéa started as a written guidebook with a persona, a philosophy and a manifesto, and no images at all. I turned it into a versioned identity system that renders every asset from code.</p>
+    </header>
+    <dl class="facts">
+      <div><dt>Guidebook chapters</dt><dd>12</dd></div>
+      <div><dt>Versions, each on a branch</dt><dd>5</dd></div>
+      <div><dt>Production assets</dt><dd>24</dd></div>
+      <div><dt>Platforms covered</dt><dd>6</dd></div>
+      <div><dt>Command to rebuild it all</dt><dd>1</dd></div>
+    </dl>
+    <ol class="stages">
+      <li class="stage">
+        <div class="stage__text">
+          <span class="stage__step">Concept</span>
+          <h3>The Quiet Futurist</h3>
+          <p>A self-defined intelligence: part Architect, part Observer, part Synthesist. Calm, precise and curious, with boundaries and without bitterness.</p>
+          <ul class="essence">
+            <li>Feminine <span>without being fragile.</span></li>
+            <li>Intelligent <span>without being arrogant.</span></li>
+            <li>Technological <span>without being robotic.</span></li>
+          </ul>
+        </div>
+        <figure class="stage__media stage__media--diagram">
+          <svg class="venn" viewBox="0 0 320 292" role="img" aria-label="Three overlapping circles named Architect, Observer and Synthesist, with Synthéa at the centre">
+            <circle cx="160" cy="98" r="78" class="venn__ring"/>
+            <circle cx="110" cy="184" r="78" class="venn__ring"/>
+            <circle cx="210" cy="184" r="78" class="venn__ring venn__ring--accent"/>
+            <circle cx="160" cy="150" r="5" class="venn__core"/>
+            <text x="160" y="13" text-anchor="middle" class="venn__label">ARCHITECT</text>
+            <text x="96" y="284" text-anchor="middle" class="venn__label">OBSERVER</text>
+            <text x="224" y="284" text-anchor="middle" class="venn__label">SYNTHESIST</text>
+            <text x="160" y="178" text-anchor="middle" class="venn__name">Synthéa</text>
+          </svg>
+        </figure>
+      </li>
+      <li class="stage">
+        <div class="stage__text">
+          <span class="stage__step">Brand</span>
+          <h3>The Synthetic Pearl</h3>
+          <p>One luminous pearl carries the identity. Its glass stands for technology and its opal sheen keeps it soft. The quiet signal inside is thought in motion, and the offset orbit is continuous change.</p>
+          <a class="link" href="#system">Explore the system</a>
+        </div>
+        <figure class="stage__media">
+          <img src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt="The Synthéa avatar: a silver glass pearl with a fine signal inside, on obsidian">
+        </figure>
+      </li>
+      <li class="stage">
+        <div class="stage__text">
+          <span class="stage__step">Representation</span>
+          <h3>Every surface, composed</h3>
+          <p>Profiles, banners, posts, stories and a carousel, each laid out for its platform's real crop: where the avatar overlaps a header, where a story's interface sits, what survives at 32 pixels.</p>
+          <a class="link" href="#surfaces">See the surfaces</a>
+        </div>
+        <figure class="stage__media stage__media--stack">
+          <img src="assets/img/banner-x.webp" width="1500" height="500" loading="lazy" decoding="async" alt="X header: the Synthéa wordmark and motto beside the pearl, a signal line passing through">
+          <div class="stack__row">
+            <img src="assets/img/post-quote.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Light quote post: I choose where my attention goes">
+            <img src="assets/img/post-note.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Dark field note post about agents and goals">
+          </div>
+        </figure>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="system" aria-labelledby="system-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Identity system</p>
+      <h2 id="system-title">The pieces, and how they behave</h2>
+      <p class="section__lead">A small set of parts with clear rules, so the identity stays recognisable everywhere it appears.</p>
+    </header>
+
+    <div class="block">
+      <h3 class="block__title">Symbol</h3>
+      <ul class="avatars">
+        <li><img src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt="Pearl avatar"><div><b>Pearl</b><span>Primary, every platform</span></div></li>
+        <li><img src="assets/img/avatar-mind.webp" width="720" height="720" loading="lazy" decoding="async" alt="Synthetic Mind avatar: dark glass with a luminous signal"><div><b>Synthetic Mind</b><span>GitHub and AI work</span></div></li>
+        <li><img src="assets/img/avatar-eclipse.webp" width="720" height="720" loading="lazy" decoding="async" alt="Eclipse avatar: the pearl partly hidden by shadow"><div><b>Eclipse</b><span>Introspective periods</span></div></li>
+        <li><img src="assets/img/avatar-pearl-light.webp" width="720" height="720" loading="lazy" decoding="async" alt="Pearl avatar on soft white"><div><b>Pearl, light</b><span>Light platforms, print</span></div></li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <div class="block__row">
+        <h3 class="block__title">Colour</h3>
+        <p class="block__note">Select a colour to copy its hex value.</p>
+      </div>
+      <div class="ratio" role="img" aria-label="Proportions: 65 percent obsidian and graphite, 20 percent pearl and soft white, 8 percent icy blue, 5 percent violet, 2 percent nacre">
+        <span style="--w:65;--c:linear-gradient(90deg,#090B10 0 70%,#171C26 70%)">65%</span>
+        <span style="--w:20;--c:linear-gradient(90deg,#DCE3EC 0 60%,#F6F7FB 60%)" class="ratio--light">20%</span>
+        <span style="--w:8;--c:#9CCBFF" class="ratio--light">8%</span>
+        <span style="--w:5;--c:#B8A7F8" class="ratio--light"></span>
+        <span style="--w:2;--c:#E8D5E3"></span>
+      </div>
+      <div class="swatches" id="swatches"></div>
+    </div>
+
+    <div class="block block--split">
+      <div>
+        <h3 class="block__title">Type</h3>
+        <dl class="specimens">
+          <div><dt>Wordmark and interface · Manrope</dt><dd class="specimen specimen--wordmark">Synthéa</dd></div>
+          <div><dt>Editorial voice · Cormorant Garamond Italic</dt><dd class="specimen specimen--editorial">I choose where my attention goes.</dd></div>
+          <div><dt>Signal and data · IBM Plex Mono</dt><dd class="specimen specimen--mono">FIELD NOTE · AGENTS · structure the task, check the output.</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h3 class="block__title">Emblem</h3>
+        <div class="emblems">
+          <div class="emblem emblem--dark"><svg viewBox="0 0 120 120" role="img" aria-label="Emblem on obsidian"><use href="#emblem"/></svg></div>
+          <div class="emblem emblem--light"><svg viewBox="0 0 120 120" role="img" aria-label="Emblem on soft white"><use href="#emblem"/></svg></div>
+        </div>
+        <dl class="meaning">
+          <div><dt>Circle</dt><dd>A defined identity</dd></div>
+          <div><dt>Core</dt><dd>Intelligence</dd></div>
+          <div><dt>Offset orbit</dt><dd>Continuous evolution</dd></div>
+          <div><dt>Signal through the core</dt><dd>Thought in motion</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="block block--split">
+      <div>
+        <h3 class="block__title">Two appearances</h3>
+        <p class="block__text">Obsidian is the default ground. Soft White carries quotes and carousels. This site follows your device setting, and the switch at the top lets you try both.</p>
+      </div>
+      <div class="modes">
+        <img src="assets/img/post-note.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Obsidian appearance: a field note post">
+        <img src="assets/img/carousel-1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Soft White appearance: principle 1, Coherence over noise">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raised" id="surfaces" aria-labelledby="surfaces-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Representation</p>
+      <h2 id="surfaces-title">On every surface</h2>
+      <p class="section__lead">Real files, ready to upload. Select any of them to see it larger.</p>
+    </header>
+    <ul class="gallery" id="gallery">
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-x.webp"><img src="assets/img/banner-x.webp" width="1500" height="500" loading="lazy" decoding="async" alt="X header, 1500 by 500"></button><span>X header · 1500 × 500</span></li>
+      <li class="gallery__item gallery__item--wide"><button type="button" data-full="assets/img/banner-linkedin.webp"><img src="assets/img/banner-linkedin.webp" width="1584" height="396" loading="lazy" decoding="async" alt="LinkedIn background in the light appearance, 1584 by 396"></button><span>LinkedIn · 1584 × 396</span></li>
+      <li class="gallery__item gallery__item--half"><button type="button" data-full="assets/img/github-social.webp"><img src="assets/img/github-social.webp" width="1280" height="640" loading="lazy" decoding="async" alt="GitHub social preview with the Synthetic Mind pearl"></button><span>GitHub preview · 1280 × 640</span></li>
+      <li class="gallery__item gallery__item--half"><button type="button" data-full="assets/img/banner-youtube.webp"><img src="assets/img/banner-youtube.webp" width="1600" height="900" loading="lazy" decoding="async" alt="YouTube channel art with the wordmark inside the safe area"></button><span>YouTube · 2560 × 1440</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/post-quote.webp"><img src="assets/img/post-quote.webp" width="864" height="1080" loading="lazy" decoding="async" alt="Quote post in the light appearance"></button><span>Quote post · 4:5</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/carousel-0.webp"><img src="assets/img/carousel-0.webp" width="640" height="800" loading="lazy" decoding="async" alt="Carousel cover: Six principles for a self-defined life"></button><span>Carousel · 7 slides</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/story.webp"><img src="assets/img/story.webp" width="600" height="1067" loading="lazy" decoding="async" alt="Story: A mind in transition"></button><span>Story · 9:16</span></li>
+      <li class="gallery__item"><button type="button" data-full="assets/img/story-manifesto.webp"><img src="assets/img/story-manifesto.webp" width="600" height="1067" loading="lazy" decoding="async" alt="The full manifesto as a story"></button><span>Manifesto story · 9:16</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="evolution" aria-labelledby="evolution-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Process</p>
+      <h2 id="evolution-title">How the identity evolved</h2>
+      <p class="section__lead">Each version lives on its own branch, so every decision can be compared and reversed. The retired version stays in the history too, because it showed where the line was.</p>
+    </header>
+    <div class="evolution" id="evolutionView">
+      <div class="evolution__tabs" role="tablist" aria-label="Versions"></div>
+      <div class="evolution__panel" role="tabpanel" tabindex="0">
+        <figure><img class="evolution__img" src="assets/img/evo-v5.webp" width="1200" height="630" decoding="async" alt="Version 5: the silver pearl with a quiet signal inside and an offset orbit"></figure>
+        <div class="evolution__text">
+          <p class="evolution__meta"><span class="chip" data-status="Current">Current</span><code>kit/v5-pearl-signal</code></p>
+          <h3 class="evolution__name">v5 · Pearl Signal</h3>
+          <p class="evolution__body">The synthesis. The original pearl and palette, with a soft opal sheen and a quiet signal inside that stands for thought in motion. A light appearance joins the obsidian one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raised" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Services</p>
+      <h2 id="services-title">What I build</h2>
+    </header>
+    <ul class="services">
+      <li><h3>Identity systems</h3><p>Concept, naming, guidebook and visual language, delivered as a living kit that regenerates every asset from code.</p></li>
+      <li><h3>Apps</h3><p>Native apps for Apple platforms with SwiftUI, MVVM and Combine, and fast, accessible web apps like this one.</p></li>
+      <li><h3>AI and agent workflows</h3><p>Structured, checkable agent workflows, from first prototype to a system people can rely on.</p></li>
+      <li><h3>Launch and presence</h3><p>Profiles, content templates and launch kits that keep one voice across every platform.</p></li>
+    </ul>
+    <h3 class="block__title">How a project runs</h3>
+    <ol class="process">
+      <li><b>Listen</b><span>What it believes, who it is for, what it refuses.</span></li>
+      <li><b>Define</b><span>A written concept you can agree with before anything is drawn.</span></li>
+      <li><b>Design</b><span>Directions shown small, then the chosen one built out in full.</span></li>
+      <li><b>Build</b><span>The product and the kit, from the same tokens.</span></li>
+      <li><b>Evolve</b><span>Versioned changes, each one explained and reversible.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section closing" id="contact" aria-labelledby="contact-title">
+  <div class="wrap closing__inner">
+    <p class="closing__manifesto">I am allowed to change.<br>I am allowed to build.<br>I am allowed to define myself.</p>
+    <h2 id="contact-title">Have a concept that deserves a coherent form?</h2>
+    <p class="section__lead">Tell me what it believes and who it is for. I will answer with how I would shape it.</p>
+    <div class="closing__actions">
+      <a class="btn btn--primary" id="contactPrimary" href="https://github.com/sociofriend" rel="noopener">Contact on GitHub</a>
+      <span class="closing__address" id="contactAddress" hidden></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__brand"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg><span>Synthéa · a self-authored identity, evolving by design.</span></p>
+    <p class="footer__colophon">Hand-built with HTML, CSS and JavaScript. No frameworks, no trackers. Set in Manrope, Cormorant Garamond and IBM Plex Mono. Every image on this site is rendered from code.</p>
+    <p class="footer__meta"><span>© 2026 Synthéa</span><span>Say it sin-THAY-uh</span><a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged image">
+  <form method="dialog"><button class="icon-btn lightbox__close" type="submit" aria-label="Close"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></form>
+  <img alt="">
+  <p class="lightbox__caption"></p>
+</dialog>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="emblem-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8A7F8"/><stop offset="1" stop-color="#9CCBFF"/></linearGradient>
+    <symbol id="emblem" viewBox="0 0 120 120" fill="none">
+      <circle cx="60" cy="60" r="42" stroke="currentColor" stroke-width="2"/>
+      <path class="emblem__signal" d="M82.0 60.0 L81.9 61.5 L81.5 63.1 L80.9 64.6 L80.1 66.1 L79.1 67.5 L77.8 68.9 L76.3 70.3 L74.7 71.7 L72.9 72.9 L71.0 74.1 L68.9 75.3 L66.8 76.3 L64.6 77.3 L62.3 78.2 L60.0 79.1 L57.7 79.8 L55.4 80.4 L53.2 80.9 L51.1 81.3 L49.0 81.7 L47.1 81.9 L45.3 82.0 L43.7 82.0 L42.2 81.9 L40.9 81.7 L39.9 81.3 L39.1 80.9 L38.5 80.4 L38.1 79.8 L38.0 79.1 L38.1 78.2 L38.5 77.3 L39.1 76.3 L39.9 75.3 L40.9 74.1 L42.2 72.9 L43.7 71.7 L45.3 70.3 L47.1 68.9 L49.0 67.5 L51.1 66.1 L53.2 64.6 L55.4 63.1 L57.7 61.5 L60.0 60.0 L62.3 58.5 L64.6 56.9 L66.8 55.4 L68.9 53.9 L71.0 52.5 L72.9 51.1 L74.7 49.7 L76.3 48.3 L77.8 47.1 L79.1 45.9 L80.1 44.7 L80.9 43.7 L81.5 42.7 L81.9 41.8 L82.0 40.9 L81.9 40.2 L81.5 39.6 L80.9 39.1 L80.1 38.7 L79.1 38.3 L77.8 38.1 L76.3 38.0 L74.7 38.0 L72.9 38.1 L71.0 38.3 L68.9 38.7 L66.8 39.1 L64.6 39.6 L62.3 40.2 L60.0 40.9 L57.7 41.8 L55.4 42.7 L53.2 43.7 L51.1 44.7 L49.0 45.9 L47.1 47.1 L45.3 48.3 L43.7 49.7 L42.2 51.1 L40.9 52.5 L39.9 53.9 L39.1 55.4 L38.5 56.9 L38.1 58.5 L38.0 60.0 L38.1 61.5 L38.5 63.1 L39.1 64.6 L39.9 66.1 L40.9 67.5 L42.2 68.9 L43.7 70.3 L45.3 71.7 L47.1 72.9 L49.0 74.1 L51.1 75.3 L53.2 76.3 L55.4 77.3 L57.7 78.2 L60.0 79.1 L62.3 79.8 L64.6 80.4 L66.8 80.9 L68.9 81.3 L71.0 81.7 L72.9 81.9 L74.7 82.0 L76.3 82.0 L77.8 81.9 L79.1 81.7 L80.1 81.3 L80.9 80.9 L81.5 80.4 L81.9 79.8 L82.0 79.1 L81.9 78.2 L81.5 77.3 L80.9 76.3 L80.1 75.3 L79.1 74.1 L77.8 72.9 L76.3 71.7 L74.7 70.3 L72.9 68.9 L71.0 67.5 L68.9 66.1 L66.8 64.6 L64.6 63.1 L62.3 61.5 L60.0 60.0 L57.7 58.5 L55.4 56.9 L53.2 55.4 L51.1 53.9 L49.0 52.5 L47.1 51.1 L45.3 49.7 L43.7 48.3 L42.2 47.1 L40.9 45.9 L39.9 44.7 L39.1 43.7 L38.5 42.7 L38.1 41.8 L38.0 40.9 L38.1 40.2 L38.5 39.6 L39.1 39.1 L39.9 38.7 L40.9 38.3 L42.2 38.1 L43.7 38.0 L45.3 38.0 L47.1 38.1 L49.0 38.3 L51.1 38.7 L53.2 39.1 L55.4 39.6 L57.7 40.2 L60.0 40.9 L62.3 41.8 L64.6 42.7 L66.8 43.7 L68.9 44.7 L71.0 45.9 L72.9 47.1 L74.7 48.3 L76.3 49.7 L77.8 51.1 L79.1 52.5 L80.1 53.9 L80.9 55.4 L81.5 56.9 L81.9 58.5 L82.0 60.0Z" stroke="url(#emblem-g)" stroke-width="1" stroke-opacity=".6"/>
+      <g transform="rotate(-24 60 60) translate(4 -3)"><ellipse cx="60" cy="60" rx="54" ry="17" stroke="url(#emblem-g)" stroke-width="1.4"/><circle cx="110.74" cy="54.19" r="3" fill="#B8A7F8"/></g>
+      <circle cx="60" cy="60" r="6" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+</body>
+</html>
