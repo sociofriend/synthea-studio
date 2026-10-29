@@ -3,7 +3,7 @@
 **Concept, brand and product, designed as one system and built.**
 *Not less human. More self-defined.*
 
-Live at **https://sociofriend.github.io**
+Live at **https://sociofriend.github.io/synthea-studio**
 
 This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site shows Synthéa's own identity as a case study. It started as a written guidebook with no images, and became a versioned identity system whose assets are all rendered from code. The site makes a promise to clients and then shows the work behind it.
 
@@ -79,7 +79,7 @@ ES modules need to be served over HTTP; they won't load from `file://`.
 
 ## Deploy
 
-GitHub Pages publishes the `main` branch of this repository automatically. Push to `main`, and the site updates within a minute or two.
+GitHub Pages publishes the `main` branch of this repository (Settings → Pages → Deploy from a branch → `main` / root). Push to `main`, and the site updates within a minute or two. Absolute URLs (canonical, Open Graph, `404.html`) use the `/synthea-studio/` base path.
 
 ---
 
