@@ -7,7 +7,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 400 var(--fs-body)/1.6 var(--f-body);
-  letter-spacing: -0.005em;
+  font-feature-settings: 'ss01';
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -25,13 +25,8 @@ code { font: 400 0.86em var(--f-mono); }
 [hidden] { display: none !important; }
 
 h1, h2, h3 { font-weight: 400; text-wrap: balance; }
-h2 { font: 650 var(--fs-h2)/1.06 var(--f-body); letter-spacing: -0.028em; }
-h3 { font: 600 var(--fs-h3)/1.25 var(--f-body); letter-spacing: -0.015em; }
-/* the soft half of every headline: the editorial italic, with the pearl's sheen */
-h2 em {
-  font: italic 400 1.1em/1 var(--f-display); letter-spacing: -0.01em; padding-right: 0.06em;
-  background: var(--sheen); -webkit-background-clip: text; background-clip: text; color: transparent;
-}
+h2 { font: 400 var(--fs-h2)/1.05 var(--f-display); letter-spacing: -0.01em; }
+h3 { font: 500 var(--fs-h3)/1.2 var(--f-display); }
 p { text-wrap: pretty; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
@@ -47,12 +42,11 @@ p { text-wrap: pretty; }
 .section--raised { background: var(--bg-raised); }
 
 .eyebrow {
-  font: 500 13px/1.4 var(--f-mono);
-  letter-spacing: 0.01em;
+  font: 500 var(--fs-label)/1.4 var(--f-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--accent);
 }
-/* section labels read like code comments */
-.eyebrow::before { content: "// "; color: var(--muted); }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 

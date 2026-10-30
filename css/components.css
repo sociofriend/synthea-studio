@@ -1,4 +1,4 @@
-/* Reusable components: navigation, buttons, links, chips, swatches, toast, lightbox, stack chips, tiles, app icons, device, glass. */
+/* Reusable components: navigation, buttons, links, chips, swatches, toast, lightbox. */
 
 /* navigation */
 .nav {
@@ -8,7 +8,7 @@
   border-bottom: 1px solid var(--line);
 }
 .nav__inner { display: flex; align-items: center; gap: 24px; min-height: 64px; }
-.nav__brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 400 19px/1 var(--f-wordmark); letter-spacing: 0.06em; color: var(--text); }
+.nav__brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font: 300 19px/1 var(--f-wordmark); letter-spacing: 0.06em; color: var(--text); }
 .nav__mark { width: 28px; height: 28px; color: var(--text); }
 .nav__links { display: flex; gap: 4px; margin-inline: auto; }
 .nav__links a { padding: 8px 12px; border-radius: 999px; text-decoration: none; font-size: var(--fs-small); color: var(--text-2); transition: color var(--dur) var(--ease), background var(--dur) var(--ease); }
@@ -21,7 +21,7 @@
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 48px; padding: 0 22px; border-radius: 999px;
-  font: 600 15px/1 var(--f-body); letter-spacing: -0.005em; text-decoration: none; white-space: nowrap;
+  font: 600 15px/1 var(--f-body); letter-spacing: 0.01em; text-decoration: none; white-space: nowrap;
   border: 1px solid transparent; cursor: pointer;
   transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
 }
@@ -96,57 +96,3 @@
 .lightbox img { width: 100%; max-height: calc(100dvh - 120px); object-fit: contain; background: var(--obsidian); }
 .lightbox__caption { padding: 14px 18px; font: 400 13px var(--f-mono); color: var(--muted); }
 .lightbox__close { position: absolute; top: 12px; right: 12px; background: var(--nav-bg); }
-
-/* stack chips: the tools, set like code tokens */
-.stack { display: flex; flex-wrap: wrap; gap: 8px; }
-.stack li {
-  padding: 5px 11px; border-radius: 8px; border: 1px solid var(--line);
-  background: var(--glass); font: 500 12px/1.3 var(--f-mono); color: var(--text-2);
-}
-.stack--small li { padding: 3px 9px; font-size: 11px; }
-
-/* icon tile: a soft opal square, like a Settings row icon */
-.tile {
-  display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 12px;
-  background: linear-gradient(135deg, var(--nacre), var(--violet) 55%, var(--icy)); color: var(--obsidian);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 8px 20px -10px rgba(184, 167, 248, 0.7);
-}
-.tile .icon { width: 22px; height: 22px; stroke-width: 1.7; }
-
-/* app icons: the iOS icon mask, approximated with a continuous-looking radius */
-.app-icon, .app-icon-img { border-radius: 22.5%; }
-.app-icon { display: grid; place-items: center; background: var(--obsidian); color: var(--pearl); }
-.app-icon-img { width: var(--pt, 100%); aspect-ratio: 1; object-fit: cover; box-shadow: 0 0 0 0.5px var(--line-strong), 0 10px 24px -14px rgba(0, 0, 0, 0.6); }
-
-/* device: a phone drawn in CSS. Pearl-tinted titanium rim, black bezel, Dynamic Island, home indicator. */
-.device {
-  --w: 300px;
-  position: relative; display: block; width: var(--w); max-width: 100%; aspect-ratio: 9 / 19.5;
-  padding: calc(var(--w) * 0.012); border-radius: calc(var(--w) * 0.175);
-  background: linear-gradient(145deg, #EDE7F1, #B4B9C6 28%, #F6F0F5 52%, #A3A9B8 78%, #DCD5E2);
-  box-shadow: 0 50px 90px -40px rgba(9, 11, 16, 0.65), 0 30px 80px -30px var(--glow-1);
-}
-.device::before { /* side buttons */
-  content: ""; position: absolute; right: calc(var(--w) * -0.009); top: 26%; width: calc(var(--w) * 0.012); height: 15%;
-  border-radius: 0 3px 3px 0; background: #B4B9C6;
-}
-.device__screen {
-  position: relative; display: block; height: 100%; overflow: hidden; isolation: isolate;
-  border: calc(var(--w) * 0.03) solid #050608; border-radius: calc(var(--w) * 0.163); background: var(--obsidian);
-}
-.device__island {
-  position: absolute; z-index: 5; top: 2.2%; left: 50%; transform: translateX(-50%);
-  width: 34%; height: 4.6%; border-radius: 999px; background: #000;
-}
-.device__home {
-  position: absolute; z-index: 5; bottom: 1.4%; left: 50%; transform: translateX(-50%);
-  width: 38%; height: 5px; border-radius: 999px; background: var(--text); opacity: 0.75;
-}
-.device--sm { --w: 220px; }
-
-/* glass material, for things that float over content */
-.glass {
-  background: var(--glass);
-  -webkit-backdrop-filter: blur(22px) saturate(180%); backdrop-filter: blur(22px) saturate(180%);
-  box-shadow: inset 0 1px 0 var(--glass-line), inset 0 0 0 1px var(--line);
-}
