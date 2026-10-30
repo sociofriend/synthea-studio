@@ -1,13 +1,13 @@
 // Offline support: the page shell is cached on install; images and fonts are cached as they are used.
 // Bump VERSION whenever files change, so returning visitors get the new release.
-const VERSION = 'synthea-2026-10-30';
+const VERSION = 'synthea-2026-10-30b';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'css/fonts.css', 'css/tokens.css', 'css/base.css', 'css/components.css', 'css/sections.css',
-  'js/app.js', 'js/core/subject.js', 'js/core/storage.js', 'js/model/content.js', 'js/render/pearl.js',
-  'js/viewmodels/appearance-view-model.js', 'js/viewmodels/evolution-view-model.js', 'js/viewmodels/toast-view-model.js',
+  'js/app.js', 'js/core/subject.js', 'js/core/storage.js', 'js/core/tabs.js', 'js/model/content.js', 'js/render/pearl.js',
+  'js/viewmodels/appearance-view-model.js', 'js/viewmodels/selection-view-model.js', 'js/viewmodels/toast-view-model.js',
   'js/views/hero-view.js', 'js/views/appearance-toggle-view.js', 'js/views/palette-view.js', 'js/views/toast-view.js',
-  'js/views/evolution-view.js', 'js/views/gallery-view.js', 'js/views/pronounce-view.js', 'js/views/contact-view.js'
+  'js/views/evolution-view.js', 'js/views/code-view.js', 'js/views/gallery-view.js', 'js/views/pronounce-view.js', 'js/views/contact-view.js'
 ];
 
 self.addEventListener('install', e => {

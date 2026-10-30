@@ -29,6 +29,19 @@
   --btn-hover: var(--soft-white);
   --nav-bg: rgba(9, 11, 16, 0.78);
   --shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8);
+  /* code, in the spirit of Xcode's dark theme, tuned to the palette */
+  --code-bg: #0C0F15;
+  --code-bar: #141822;
+  --code-line: #4E566A;
+  --syn-text: #DCE3EC;
+  --syn-kw: #F2A7D3;
+  --syn-type: #9CCBFF;
+  --syn-fn: #B8A7F8;
+  --syn-str: #F5B7A0;
+  --syn-num: #E5D18A;
+  --syn-com: #7D869E;
+  --syn-attr: #D9A6F2;
+  --syn-mem: #A5D8CF;
   color-scheme: dark;
 
   /* type */
@@ -73,6 +86,18 @@
     --btn-hover: #2E3446;
     --nav-bg: rgba(246, 247, 251, 0.8);
     --shadow: 0 24px 60px -34px rgba(30, 34, 48, 0.45);
+    --code-bg: #FFFFFF;
+    --code-bar: #EEF0F6;
+    --code-line: #A3AABB;
+    --syn-text: #1E2230;
+    --syn-kw: #A3317E;
+    --syn-type: #2B5E9C;
+    --syn-fn: #5B47B8;
+    --syn-str: #B4462E;
+    --syn-num: #7A5C00;
+    --syn-com: #6B7489;
+    --syn-attr: #8A3FAE;
+    --syn-mem: #2F6F66;
     color-scheme: light;
   }
 }
@@ -94,5 +119,17 @@
   --btn-hover: #2E3446;
   --nav-bg: rgba(246, 247, 251, 0.8);
   --shadow: 0 24px 60px -34px rgba(30, 34, 48, 0.45);
+  --code-bg: #FFFFFF;
+  --code-bar: #EEF0F6;
+  --code-line: #A3AABB;
+  --syn-text: #1E2230;
+  --syn-kw: #A3317E;
+  --syn-type: #2B5E9C;
+  --syn-fn: #5B47B8;
+  --syn-str: #B4462E;
+  --syn-num: #7A5C00;
+  --syn-com: #6B7489;
+  --syn-attr: #8A3FAE;
+  --syn-mem: #2F6F66;
   color-scheme: light;
 }

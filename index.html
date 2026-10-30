@@ -47,6 +47,7 @@
     <nav class="nav__links" aria-label="Sections">
       <a href="#promise">Promise</a>
       <a href="#work">Work</a>
+      <a href="#apps">Apps</a>
       <a href="#system">System</a>
       <a href="#evolution">Evolution</a>
       <a href="#services">Services</a>
@@ -184,7 +185,159 @@
   </div>
 </section>
 
-<section class="section" id="system" aria-labelledby="system-title">
+<section class="section" id="apps" aria-labelledby="apps-title">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow">Mobile software</p>
+      <h2 id="apps-title">The same pearl, native</h2>
+      <p class="section__lead">I build apps for iPhone and iPad in Swift and SwiftUI, structured as MVVM with Combine and shaped by Apple's Human Interface Guidelines. Here is the pearl from this page, written for iPhone: a SwiftUI <code>Canvas</code> inside a <code>TimelineView</code>, driven by a view model that pauses it for Reduce Motion or when it leaves the screen.</p>
+    </header>
+
+    <div class="xcode" id="codeView">
+      <div class="xcode__bar">
+        <span class="xcode__lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="xcode__crumbs" aria-hidden="true">Synthéa <span>›</span> <span class="xcode__folder"></span> <span>›</span> <b class="xcode__file"></b></span>
+      </div>
+      <div class="xcode__body">
+        <div class="xcode__nav">
+          <p class="xcode__project"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6H9l2 2h8.5A1.5 1.5 0 0 1 21 9.5v8a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-10Z"/></svg>Synthéa</p>
+          <div class="xcode__files" role="tablist" aria-label="Source files">
+            <button class="file" type="button" role="tab" id="file-view" aria-controls="src-view" data-folder="Views"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>PearlView.swift</span></button>
+            <button class="file" type="button" role="tab" id="file-vm" aria-controls="src-vm" data-folder="ViewModels"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>PearlViewModel.swift</span></button>
+            <button class="file" type="button" role="tab" id="file-render" aria-controls="src-render" data-folder="Rendering"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/></svg><span>GraphicsContext+Pearl.swift</span></button>
+          </div>
+        </div>
+        <div class="xcode__editor">
+          <div class="xcode__src" role="tabpanel" id="src-view" aria-labelledby="file-view" tabindex="0"><pre><code data-src="native/Synthea/Views/PearlView.swift"><span class="line"><span class="kw">import</span> <span class="t">SwiftUI</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">/// The live Synthetic Pearl: drawn every frame while visible, still for Reduce Motion.</span></span>
+<span class="line"><span class="kw">struct</span> <span class="t">PearlView</span>: <span class="t">View</span> {</span>
+<span class="line">    <span class="a">@StateObject</span> <span class="kw">private</span> <span class="kw">var</span> model = <span class="t">PearlViewModel</span>()</span>
+<span class="line">    <span class="a">@Environment</span>(<span class="k">\.accessibilityReduceMotion</span>) <span class="kw">private</span> <span class="kw">var</span> reduceMotion</span>
+<span class="line"></span>
+<span class="line">    <span class="kw">var</span> body: <span class="kw">some</span> <span class="t">View</span> {</span>
+<span class="line">        <span class="t">TimelineView</span>(.<span class="f">animation</span>(paused: model.<span class="m">isPaused</span>)) { timeline <span class="kw">in</span></span>
+<span class="line">            <span class="t">Canvas</span> { context, size <span class="kw">in</span></span>
+<span class="line">                <span class="kw">let</span> center = <span class="t">CGPoint</span>(x: size.<span class="m">width</span> / <span class="n">2</span>, y: size.<span class="m">height</span> / <span class="n">2</span>)</span>
+<span class="line">                <span class="kw">let</span> radius = <span class="f">min</span>(size.<span class="m">width</span>, size.<span class="m">height</span>) * <span class="n">0.36</span></span>
+<span class="line">                context.<span class="f">drawPearl</span>(at: center, radius: radius)</span>
+<span class="line">                context.<span class="f">drawSignal</span>(at: center, radius: radius * <span class="n">0.56</span>,</span>
+<span class="line">                                   phase: model.<span class="f">phase</span>(at: timeline.<span class="m">date</span>))</span>
+<span class="line">            }</span>
+<span class="line">        }</span>
+<span class="line">        .<span class="f">onChange</span>(of: reduceMotion, initial: <span class="kw">true</span>) { model.<span class="m">reduceMotion</span> = $<span class="n">1</span> }</span>
+<span class="line">        .<span class="m">onAppear</span> { model.<span class="m">isOnScreen</span> = <span class="kw">true</span> }</span>
+<span class="line">        .<span class="m">onDisappear</span> { model.<span class="m">isOnScreen</span> = <span class="kw">false</span> }</span>
+<span class="line">        .<span class="f">accessibilityElement</span>(children: .<span class="m">ignore</span>)</span>
+<span class="line">        .<span class="f">accessibilityLabel</span>(<span class="s">"Synthéa, a glass pearl with a signal inside"</span>)</span>
+<span class="line">        .<span class="f">accessibilityAddTraits</span>(.<span class="m">isImage</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line"><span class="a">#Preview</span> {</span>
+<span class="line">    <span class="t">PearlView</span>()</span>
+<span class="line">        .<span class="f">frame</span>(width: <span class="n">320</span>, height: <span class="n">320</span>)</span>
+<span class="line">        .<span class="f">background</span>(<span class="t">Color</span>.<span class="m">obsidian</span>)</span>
+<span class="line">}</span></code></pre></div>
+          <div class="xcode__src" role="tabpanel" id="src-vm" aria-labelledby="file-vm" tabindex="0"><pre><code data-src="native/Synthea/ViewModels/PearlViewModel.swift"><span class="line"><span class="kw">import</span> <span class="t">Combine</span></span>
+<span class="line"><span class="kw">import</span> <span class="t">Foundation</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">/// Drives the pearl. The view reports what it knows; the model decides when to animate.</span></span>
+<span class="line"><span class="a">@MainActor</span></span>
+<span class="line"><span class="kw">final</span> <span class="kw">class</span> <span class="t">PearlViewModel</span>: <span class="t">ObservableObject</span> {</span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">var</span> reduceMotion = <span class="kw">false</span></span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">var</span> isOnScreen = <span class="kw">false</span></span>
+<span class="line">    <span class="a">@Published</span> <span class="kw">private</span>(<span class="kw">set</span>) <span class="kw">var</span> isPaused = <span class="kw">true</span></span>
+<span class="line"></span>
+<span class="line">    <span class="kw">init</span>() {</span>
+<span class="line">        <span class="k">$reduceMotion</span></span>
+<span class="line">            .<span class="f">combineLatest</span>(<span class="k">$isOnScreen</span>)</span>
+<span class="line">            .<span class="m">map</span> { reduceMotion, isOnScreen <span class="kw">in</span> reduceMotion || !isOnScreen }</span>
+<span class="line">            .<span class="f">removeDuplicates</span>()</span>
+<span class="line">            .<span class="f">assign</span>(to: &amp;<span class="k">$isPaused</span>)</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    <span class="c">/// The signal's phase at a moment. Near π/2 the curve crosses the core.</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">phase</span>(at date: <span class="t">Date</span>) -&gt; <span class="t">Double</span> {</span>
+<span class="line">        <span class="t">Double</span>.<span class="m">pi</span> / <span class="n">2</span> + <span class="n">0.22</span> * <span class="f">sin</span>(date.<span class="m">timeIntervalSinceReferenceDate</span> * <span class="n">0.35</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+          <div class="xcode__src" role="tabpanel" id="src-render" aria-labelledby="file-render" tabindex="0"><pre><code data-src="native/Synthea/Rendering/GraphicsContext+Pearl.swift"><span class="line"><span class="kw">import</span> <span class="t">SwiftUI</span></span>
+<span class="line"></span>
+<span class="line"><span class="c">// Brand colours live in the asset catalog with light and dark variants;</span></span>
+<span class="line"><span class="c">// Xcode generates Color.obsidian, .pearl, .icy, .violet and .nacre.</span></span>
+<span class="line"></span>
+<span class="line"><span class="kw">extension</span> <span class="t">GraphicsContext</span> {</span>
+<span class="line">    <span class="c">/// Glass body, opal sheen and a fine rim, drawn back to front.</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">drawPearl</span>(at c: <span class="t">CGPoint</span>, radius r: <span class="t">CGFloat</span>) {</span>
+<span class="line">        <span class="kw">let</span> body = <span class="t">Path</span>(ellipseIn: <span class="t">CGRect</span>(x: c.<span class="m">x</span> - r, y: c.<span class="m">y</span> - r, width: <span class="n">2</span> * r, height: <span class="n">2</span> * r))</span>
+<span class="line">        <span class="f">fill</span>(body, with: .<span class="f">radialGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">pearl</span>, .<span class="m">pearl</span>.<span class="f">opacity</span>(<span class="n">0.35</span>), .<span class="m">obsidian</span>]),</span>
+<span class="line">            center: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> - r * <span class="n">0.35</span>, y: c.<span class="m">y</span> - r * <span class="n">0.4</span>),</span>
+<span class="line">            startRadius: <span class="n">0</span>, endRadius: r * <span class="n">1.4</span>))</span>
+<span class="line"></span>
+<span class="line">        <span class="kw">var</span> sheen = <span class="kw">self</span></span>
+<span class="line">        sheen.<span class="m">blendMode</span> = .<span class="m">softLight</span></span>
+<span class="line">        sheen.<span class="f">fill</span>(body, with: .<span class="f">conicGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">nacre</span>, .<span class="m">violet</span>, .<span class="m">icy</span>, .<span class="m">nacre</span>]),</span>
+<span class="line">            center: c, angle: .<span class="f">degrees</span>(-<span class="n">30</span>)))</span>
+<span class="line"></span>
+<span class="line">        <span class="f">stroke</span>(body, with: .<span class="f">color</span>(.<span class="m">pearl</span>.<span class="f">opacity</span>(<span class="n">0.5</span>)), lineWidth: <span class="n">1</span>)</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    <span class="c">/// The 3:2 Lissajous signal: x = r·sin(3t + phase), y = r·sin(2t).</span></span>
+<span class="line">    <span class="kw">func</span> <span class="f">drawSignal</span>(at c: <span class="t">CGPoint</span>, radius r: <span class="t">CGFloat</span>, phase: <span class="t">Double</span>) {</span>
+<span class="line">        <span class="kw">var</span> path = <span class="t">Path</span>()</span>
+<span class="line">        <span class="kw">for</span> step <span class="kw">in</span> <span class="n">0</span>...<span class="n">360</span> {</span>
+<span class="line">            <span class="kw">let</span> t = <span class="t">Double</span>(step) / <span class="n">360</span> * <span class="n">2</span> * .<span class="m">pi</span></span>
+<span class="line">            <span class="kw">let</span> point = <span class="t">CGPoint</span>(x: c.<span class="m">x</span> + r * <span class="f">sin</span>(<span class="n">3</span> * t + phase), y: c.<span class="m">y</span> + r * <span class="f">sin</span>(<span class="n">2</span> * t))</span>
+<span class="line">            <span class="kw">if</span> step == <span class="n">0</span> { path.<span class="f">move</span>(to: point) } <span class="kw">else</span> { path.<span class="f">addLine</span>(to: point) }</span>
+<span class="line">        }</span>
+<span class="line">        <span class="f">stroke</span>(path, with: .<span class="f">linearGradient</span>(</span>
+<span class="line">            <span class="t">Gradient</span>(colors: [.<span class="m">violet</span>, .<span class="m">icy</span>]),</span>
+<span class="line">            startPoint: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> - r, y: c.<span class="m">y</span>),</span>
+<span class="line">            endPoint: <span class="t">CGPoint</span>(x: c.<span class="m">x</span> + r, y: c.<span class="m">y</span>)), lineWidth: <span class="n">1</span>)</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre></div>
+        </div>
+      </div>
+      <div class="xcode__status">
+        <span>Swift · SwiftUI · Combine · iOS 17 or later</span>
+        <a href="https://github.com/sociofriend/synthea-studio/tree/main/native" rel="noopener">View the source</a>
+      </div>
+    </div>
+
+    <div class="block block--split">
+      <div>
+        <h3 class="block__title">App icon</h3>
+        <figure class="icons">
+          <div class="icons__main">
+            <div><img class="app-icon-img" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt="App icon in the dark appearance: the silver pearl on obsidian"><span>Dark</span></div>
+            <div><img class="app-icon-img" src="assets/img/avatar-pearl-light.webp" width="720" height="720" loading="lazy" decoding="async" alt="App icon in the light appearance: the pearl on soft white"><span>Light</span></div>
+          </div>
+          <ul class="icons__sizes">
+            <li><img class="app-icon-img" style="--pt:60px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>60 pt<br>Home Screen</span></li>
+            <li><img class="app-icon-img" style="--pt:40px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>40 pt<br>Spotlight</span></li>
+            <li><img class="app-icon-img" style="--pt:29px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>29 pt<br>Settings</span></li>
+            <li><img class="app-icon-img" style="--pt:20px" src="assets/img/avatar-pearl.webp" width="720" height="720" loading="lazy" decoding="async" alt=""><span>20 pt<br>Notification</span></li>
+          </ul>
+          <figcaption>The pearl as an app icon, shown at its real iPhone sizes in points.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <h3 class="block__title">Built in from the first line</h3>
+        <ul class="checks">
+          <li><b>Reduce Motion</b><span>When the setting is on, the pearl holds still, on this page and on iPhone.</span></li>
+          <li><b>Dark and Light</b><span>Every colour is a token with both appearances, so switching is one line.</span></li>
+          <li><b>VoiceOver</b><span>Images carry labels, and decoration stays silent.</span></li>
+          <li><b>Battery</b><span>Drawing pauses off-screen, and the static layers are drawn once and cached.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raised" id="system" aria-labelledby="system-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Identity system</p>
@@ -254,7 +407,7 @@
   </div>
 </section>
 
-<section class="section section--raised" id="surfaces" aria-labelledby="surfaces-title">
+<section class="section" id="surfaces" aria-labelledby="surfaces-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Representation</p>
@@ -274,7 +427,7 @@
   </div>
 </section>
 
-<section class="section" id="evolution" aria-labelledby="evolution-title">
+<section class="section section--raised" id="evolution" aria-labelledby="evolution-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Process</p>
@@ -295,7 +448,7 @@
   </div>
 </section>
 
-<section class="section section--raised" id="services" aria-labelledby="services-title">
+<section class="section" id="services" aria-labelledby="services-title">
   <div class="wrap">
     <header class="section__head">
       <p class="eyebrow">Services</p>
@@ -303,7 +456,7 @@
     </header>
     <ul class="services">
       <li><h3>Identity systems</h3><p>Concept, naming, guidebook and visual language, delivered as a living kit that regenerates every asset from code.</p></li>
-      <li><h3>Apps</h3><p>Native apps for Apple platforms with SwiftUI, MVVM and Combine, and fast, accessible web apps like this one.</p></li>
+      <li><h3>Apps</h3><p>Native apps for Apple platforms with SwiftUI, MVVM and Combine, and fast, accessible web apps like this one.</p><a class="link" href="#apps">See the code</a></li>
       <li><h3>AI and agent workflows</h3><p>Structured, checkable agent workflows, from first prototype to a system people can rely on.</p></li>
       <li><h3>Launch and presence</h3><p>Profiles, content templates and launch kits that keep one voice across every platform.</p></li>
     </ul>
@@ -318,7 +471,7 @@
   </div>
 </section>
 
-<section class="section closing" id="contact" aria-labelledby="contact-title">
+<section class="section section--raised closing" id="contact" aria-labelledby="contact-title">
   <div class="wrap closing__inner">
     <p class="closing__manifesto">I am allowed to change.<br>I am allowed to build.<br>I am allowed to define myself.</p>
     <h2 id="contact-title">Have a concept that deserves a coherent form?</h2>
@@ -336,6 +489,7 @@
   <div class="wrap footer__inner">
     <p class="footer__brand"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#emblem"/></svg><span>Synthéa · a self-authored identity, evolving by design.</span></p>
     <p class="footer__colophon">Hand-built with HTML, CSS and JavaScript. No frameworks, no trackers. Set in Manrope, Cormorant Garamond and IBM Plex Mono. Every image on this site is rendered from code.</p>
+    <p class="footer__colophon">Apple, iPhone, iPad, iOS, Swift, SwiftUI and Xcode are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
     <p class="footer__meta"><span>© 2026 Synthéa</span><span>Say it sin-THAY-uh</span><a href="#top">Back to top</a></p>
   </div>
 </footer>

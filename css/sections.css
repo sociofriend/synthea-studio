@@ -77,6 +77,75 @@
   .stage:nth-child(even) .stage__text { order: 0; }
 }
 
+/* code: an Xcode-style window with a file navigator; files are tabs */
+.xcode {
+  border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line);
+  background: var(--code-bg); box-shadow: var(--shadow);
+}
+.xcode__bar { display: flex; align-items: center; gap: 18px; height: 44px; padding: 0 16px; background: var(--code-bar); border-bottom: 1px solid var(--line); }
+.xcode__lights { display: flex; gap: 8px; flex: none; }
+.xcode__lights i { width: 12px; height: 12px; border-radius: 50%; background: #FF5F57; }
+.xcode__lights i:nth-child(2) { background: #FEBC2E; }
+.xcode__lights i:nth-child(3) { background: #28C840; }
+.xcode__crumbs { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font: 400 12px var(--f-mono); color: var(--muted); }
+.xcode__crumbs b { font-weight: 500; color: var(--text); }
+.xcode__body { display: grid; grid-template-columns: 236px minmax(0, 1fr); }
+.xcode__nav { padding: 12px 10px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--code-bar) 55%, var(--code-bg)); }
+.xcode__project { display: flex; align-items: center; gap: 8px; padding: 6px 8px; font: 600 13px var(--f-body); color: var(--text); }
+.xcode__project .icon { width: 16px; height: 16px; color: var(--accent); }
+.xcode__files { display: grid; gap: 2px; padding-left: 14px; }
+.file {
+  display: flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 8px; border: 0; border-radius: 7px;
+  background: none; font: 400 13px var(--f-body); color: var(--text-2); text-align: left; white-space: nowrap; cursor: pointer;
+}
+.file .icon { flex: none; width: 16px; height: 16px; color: var(--syn-str); }
+.file:hover { background: var(--surface-2); color: var(--text); }
+.file[aria-selected="true"] { background: color-mix(in srgb, var(--accent) 20%, transparent); color: var(--text); }
+/* panels share one grid cell, so switching files never changes the window's height */
+.xcode__editor { display: grid; min-width: 0; }
+.xcode__src { grid-area: 1 / 1; min-width: 0; }
+.xcode__src.is-inactive { visibility: hidden; }
+.xcode__src pre { margin: 0; padding: 18px 24px 18px 0; overflow-x: auto; font: 400 13px/1.7 var(--f-mono); color: var(--syn-text); tab-size: 4; counter-reset: ln; }
+.xcode__src code { font: inherit; }
+.xcode__src .line { counter-increment: ln; }
+.xcode__src .line::before { content: counter(ln); display: inline-block; width: 3ch; margin: 0 2.4ch 0 1.2ch; text-align: right; color: var(--code-line); user-select: none; }
+.xcode .kw { color: var(--syn-kw); font-weight: 500; }
+.xcode .t { color: var(--syn-type); }
+.xcode .f { color: var(--syn-fn); }
+.xcode .s { color: var(--syn-str); }
+.xcode .n { color: var(--syn-num); }
+.xcode .c { color: var(--syn-com); }
+.xcode .a { color: var(--syn-attr); }
+.xcode .k { color: var(--syn-type); }
+.xcode .m { color: var(--syn-mem); }
+.xcode__status { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 10px 16px; border-top: 1px solid var(--line); background: var(--code-bar); font: 400 12px var(--f-mono); color: var(--muted); }
+.xcode__status a { color: var(--accent); }
+@media (max-width: 860px) {
+  .xcode__body { grid-template-columns: minmax(0, 1fr); }
+  .xcode__nav { padding: 8px; border-right: 0; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+  .xcode__project { display: none; }
+  .xcode__files { display: flex; padding-left: 0; }
+  .xcode__src pre { font-size: 12px; }
+}
+
+.xcode + .block { margin-top: clamp(40px, 5vw, 64px); padding-top: 0; border-top: 0; }
+
+/* app icon sheet: the pearl at real iPhone sizes */
+.icons { display: grid; justify-items: center; gap: 28px; margin-top: 14px; padding: clamp(24px, 4vw, 40px); border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--surface); }
+.icons__main { display: flex; gap: clamp(20px, 4vw, 40px); }
+.icons__main > div { display: grid; justify-items: center; gap: 10px; font: 400 12px var(--f-mono); color: var(--muted); }
+.app-icon-img { width: var(--pt, 100%); aspect-ratio: 1; object-fit: cover; border-radius: 22.5%; box-shadow: 0 0 0 0.5px var(--line-strong), 0 12px 28px -16px rgba(0, 0, 0, 0.7); }
+.icons__main .app-icon-img { width: clamp(96px, 11vw, 136px); }
+.icons__sizes { display: flex; align-items: flex-end; gap: clamp(14px, 3vw, 28px); }
+.icons__sizes li { display: grid; justify-items: center; gap: 10px; text-align: center; font: 400 11px/1.35 var(--f-mono); color: var(--muted); }
+.icons figcaption { font-size: 13px; color: var(--muted); text-align: center; }
+
+.checks { display: grid; margin-top: 14px; }
+.checks li { display: grid; gap: 4px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.checks li:first-child { padding-top: 0; }
+.checks b { font: 500 var(--fs-h3)/1.2 var(--f-display); }
+.checks span { font-size: 15px; color: var(--text-2); }
+
 /* identity system */
 .block { display: grid; gap: 20px; padding-block: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line); }
 .block:first-of-type { border-top: 0; padding-top: 0; }
