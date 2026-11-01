@@ -45,6 +45,9 @@
 #appearanceToggle[aria-pressed="true"] .icon--sun { display: none; }
 #appearanceToggle[aria-pressed="true"] .icon--moon { display: block; }
 
+/* the sound switch lights up while Calm Ocean plays */
+#ambienceToggle[aria-pressed="true"] { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+
 .link {
   display: inline-flex; align-items: center; gap: 6px; width: fit-content;
   color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px;

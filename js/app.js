@@ -3,8 +3,11 @@ import { contact, pronunciation, swatches, versions } from './model/content.js';
 import { AppearanceViewModel } from './viewmodels/appearance-view-model.js';
 import { SelectionViewModel } from './viewmodels/selection-view-model.js';
 import { ToastViewModel } from './viewmodels/toast-view-model.js';
+import { AmbienceViewModel } from './viewmodels/ambience-view-model.js';
+import { CalmOceanEngine } from './audio/calm-ocean-engine.js';
 import { HeroView } from './views/hero-view.js';
 import { AppearanceToggleView } from './views/appearance-toggle-view.js';
+import { AmbienceToggleView } from './views/ambience-toggle-view.js';
 import { PaletteView } from './views/palette-view.js';
 import { ToastView } from './views/toast-view.js';
 import { EvolutionView } from './views/evolution-view.js';
@@ -19,6 +22,9 @@ const appearance = new AppearanceViewModel();
 const toast = new ToastViewModel();
 
 new AppearanceToggleView({ button: $('appearanceToggle'), label: $('appearanceLabel'), appearance });
+if (CalmOceanEngine.isSupported) {
+  new AmbienceToggleView({ button: $('ambienceToggle'), label: $('ambienceLabel'), ambience: new AmbienceViewModel(new CalmOceanEngine()) });
+}
 new HeroView({ ground: $('heroGround'), stage: $('heroStage'), appearance });
 new PronounceView({ button: $('sayIt'), pronunciation });
 new PaletteView({ root: $('swatches'), swatches, toast });
