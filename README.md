@@ -11,6 +11,7 @@ This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site 
 
 | Section | What it shows |
 |---|---|
+| Sound | The header's wave button plays *Calm Ocean* from Aethéa (ocean waves, a warm pad and wind chimes), synthesised live so it never loops or repeats. |
 | Hero | A live, code-rendered Synthetic Pearl. Its inner signal drifts slowly and follows the pointer. |
 | The promise | Four commitments a client can hold Synthéa to. |
 | Case study | The Synthéa identity, followed from concept to brand to representation. |
@@ -26,6 +27,7 @@ This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site 
 - **MVVM.** View models publish state through a small `Subject`, modelled on Combine's `CurrentValueSubject`. Views subscribe and render. `js/app.js` is the composition root.
 - **The pearl is drawn, not photographed.** `js/render/pearl.js` is the same renderer that produces the identity kit. For the hero, the pearl's static layers are cached once, and each frame redraws only the signal. That keeps the hero at 60 fps. It pauses when the hero is off-screen or the tab is hidden, and it stays still when the visitor has asked for reduced motion.
 - **Native counterpart.** `native/` holds the SwiftUI version of the pearl: `PearlView` draws it with `Canvas` in a `TimelineView`, and `PearlViewModel` uses Combine to pause it for Reduce Motion or when it leaves the screen. It needs iOS 17 or later. The page shows these files as static, highlighted HTML.
+- **Endless sound.** `js/audio/calm-ocean-processor.js` ports Aethéa's Swift generators (ocean, warm pad, wind chimes) to an `AudioWorklet`, so the sound is generated, not streamed: a few kilobytes, no file to loop, no seam. `calm-ocean-engine.js` rebuilds the app's mix (per-layer reverb, master level, peak limiter). It starts only when the visitor presses the button, fades in and out, shows on the lock screen through Media Session, and on iPhone plays through the silent switch like music.
 - **Two appearances.** Obsidian is the default and Soft White follows the device setting. The switch in the header overrides either one, and the choice is remembered. Everything runs on design tokens (`css/tokens.css`).
 - **Installable.** A web app manifest and a service worker let visitors install the site and open it offline after their first visit.
 - **Accessible.**
@@ -59,6 +61,7 @@ js/
   viewmodels/              appearance, selection (any tab list), toast
   views/                   hero, appearance switch, palette, code, evolution, gallery, pronunciation, contact, toast
   render/pearl.js          the Synthetic Pearl renderer
+  audio/                   Calm Ocean: AudioWorklet port of Aethéa's generators, and the mix around it
 native/Synthea/            the pearl in SwiftUI: Views, ViewModels, Rendering
 tools/highlight-swift.py   refreshes the highlighted Swift in index.html from native/
 assets/
