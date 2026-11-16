@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "command": "/Users/training/.local/share/uv/tools/graphifyy/bin/graphify-mcp",
+      "args": [
+        "--graph",
+        "graphify-out/graph.json"
+      ]
+    }
+  }
+}
