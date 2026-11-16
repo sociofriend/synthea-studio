@@ -30,6 +30,7 @@ new PronounceView({ button: $('sayIt'), pronunciation });
 new PaletteView({ root: $('swatches'), swatches, toast });
 new ToastView({ el: $('toast'), toast });
 new GalleryView({ root: $('gallery'), dialog: $('lightbox') });
+new GalleryView({ root: $('prepgoShots'), dialog: $('lightbox') });
 new EvolutionView({ root: $('evolutionView'), viewModel: new SelectionViewModel(versions, Math.max(0, versions.findIndex(v => v.status === 'Current'))) });
 new CodeView({ root: $('codeView'), viewModel: new SelectionViewModel([...$('codeView').querySelectorAll('[role="tab"]')].map(t => t.id)) });
 new ContactView({ primary: $('contactPrimary'), address: $('contactAddress'), contact });

@@ -274,3 +274,7 @@
 @media (max-width: 420px) { .app-card { grid-template-columns: minmax(0, 1fr); } .app-card__store { grid-column: 1; } }
 .block__lead { color: var(--text-2); max-width: 62ch; }
 #apps .block:has(+ .xcode) { padding-bottom: 24px; }
+.app-shots { grid-column: 1 / -1; display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 6px; }
+.app-shots li { flex: 0 0 auto; scroll-snap-align: start; }
+.app-shots button { display: block; padding: 0; border: 0; background: none; border-radius: 12px; cursor: zoom-in; }
+.app-shots img { width: 104px; height: auto; border-radius: 12px; border: 1px solid var(--line); }
