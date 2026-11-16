@@ -255,3 +255,22 @@
 .footer__colophon { font-size: 13px; color: var(--muted); max-width: 70ch; }
 .footer__meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font: 400 12px var(--f-mono); color: var(--muted); }
 .footer__meta a { color: var(--text-2); }
+
+/* app portfolio: one card per app; App Store badge per Apple's marketing guidelines (official artwork, 40 px or taller, clear space a quarter of its height) */
+.app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 24px); }
+.app-card { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: 1fr auto; gap: 16px 20px; padding: clamp(20px, 2.6vw, 28px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+.app-card__icon { width: 72px; }
+.app-icon-img--watch { border-radius: 50%; background: var(--surface-2); }
+.app-card__icon--placeholder { display: grid; place-items: center; background: linear-gradient(135deg, var(--surface-2), var(--bg)); font: 300 20px var(--f-wordmark); letter-spacing: 0.06em; color: var(--muted); }
+.app-card__body { display: grid; align-content: start; gap: 6px; }
+.app-card__name { margin: 0; font: 500 var(--fs-h3)/1.15 var(--f-display); }
+.app-card__meta { font: 400 var(--fs-label)/1.4 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.app-card__text { margin-top: 6px; font-size: 15px; color: var(--text-2); }
+.app-card__store { grid-column: 2; padding-top: 12px; min-height: 60px; display: flex; align-items: center; }
+.store-badge { display: inline-block; border-radius: 8px; line-height: 0; }
+.store-badge img { width: auto; height: 48px; }
+.app-card__soon { font: 400 13px/1.4 var(--f-mono); color: var(--accent); }
+@media (max-width: 760px) { .app-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .app-card { grid-template-columns: minmax(0, 1fr); } .app-card__store { grid-column: 1; } }
+.block__lead { color: var(--text-2); max-width: 62ch; }
+#apps .block:has(+ .xcode) { padding-bottom: 24px; }

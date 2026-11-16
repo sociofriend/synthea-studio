@@ -15,7 +15,7 @@ This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site 
 | Hero | A live, code-rendered Synthetic Pearl. Its inner signal drifts slowly and follows the pointer. |
 | The promise | Four commitments a client can hold Synthéa to. |
 | Case study | The Synthéa identity, followed from concept to brand to representation. |
-| Mobile software | The same pearl written in SwiftUI, in an Xcode-style viewer (view, Combine view model, renderer), plus the app icon at its real iPhone sizes. |
+| Mobile software | App portfolio (live apps with the official App Store badge, upcoming ones marked "Coming soon to the App Store"), then the same pearl written in SwiftUI in an Xcode-style viewer, plus the app icon at its real iPhone sizes. |
 | Identity system | The symbol variants, the colours (select one to copy its hex value), the type and the emblem, in both appearances. |
 | Surfaces | Production files for X, LinkedIn, GitHub, YouTube, posts, a carousel and stories, with a lightbox. |
 | Evolution | Every kit version and what changed, as an accessible tab list. |
