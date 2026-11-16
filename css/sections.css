@@ -258,7 +258,7 @@
 
 /* app portfolio: one card per app; App Store badge per Apple's marketing guidelines (official artwork, 40 px or taller, clear space a quarter of its height) */
 .app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 24px); }
-.app-card { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: 1fr auto; gap: 16px 20px; padding: clamp(20px, 2.6vw, 28px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+.app-card { display: grid; grid-template-columns: auto minmax(0, 1fr); align-self: start; align-content: start; gap: 16px 20px; padding: clamp(20px, 2.6vw, 28px); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
 .app-card__icon { width: 72px; }
 .app-icon-img--watch { border-radius: 50%; background: var(--surface-2); }
 .app-card__icon--placeholder { display: grid; place-items: center; background: linear-gradient(135deg, var(--surface-2), var(--bg)); font: 300 20px var(--f-wordmark); letter-spacing: 0.06em; color: var(--muted); }
