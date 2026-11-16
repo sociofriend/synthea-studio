@@ -5,7 +5,7 @@
 
 Live at **https://sociofriend.github.io/synthea-studio**
 
-This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site shows Synthéa's own identity as a case study. It started as a written guidebook with no images, and became a versioned identity system whose assets are all rendered from code. The site makes a promise to clients and then shows the work behind it.
+This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site leads with the apps, makes a promise to clients, and shows Synthéa's own identity as a case study. Copy stays client-facing and non-technical: the site's own quality is the proof, so it shows rather than explains how things are built.
 
 ## What's on the page
 
@@ -13,9 +13,9 @@ This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site 
 |---|---|
 | Sound | The header's wave button plays *Calm Ocean* from Aethéa (ocean waves, a warm pad and wind chimes), synthesised live so it never loops or repeats. |
 | Hero | A live, code-rendered Synthetic Pearl. Its inner signal drifts slowly and follows the pointer. |
+| Work | The app portfolio (live apps with the official App Store badge, upcoming ones marked "Coming soon to the App Store", Prep&Go screenshots) and what every app gets, in plain words. The nav's Work link lands here. |
 | The promise | Four commitments a client can hold Synthéa to. |
 | Case study | The Synthéa identity, followed from concept to brand to representation. |
-| Mobile software | App portfolio (live apps with the official App Store badge, upcoming ones marked "Coming soon to the App Store"), then the same pearl written in SwiftUI in an Xcode-style viewer, plus the app icon at its real iPhone sizes. |
 | Identity system | The symbol variants, the colours (select one to copy its hex value), the type and the emblem, in both appearances. |
 | Surfaces | Production files for X, LinkedIn, GitHub, YouTube, posts, a carousel and stories, with a lightbox. |
 | Evolution | Every kit version and what changed, as an accessible tab list. |
@@ -26,7 +26,7 @@ This is the home of Synthéa (say it *sin-THAY-uh*, /sɪnˈθeɪ.ə/). The site 
 - **No framework and no build step.** The site is semantic HTML, modern CSS and native ES modules, so it can be served as is.
 - **MVVM.** View models publish state through a small `Subject`, modelled on Combine's `CurrentValueSubject`. Views subscribe and render. `js/app.js` is the composition root.
 - **The pearl is drawn, not photographed.** `js/render/pearl.js` is the same renderer that produces the identity kit. For the hero, the pearl's static layers are cached once, and each frame redraws only the signal. That keeps the hero at 60 fps. It pauses when the hero is off-screen or the tab is hidden, and it stays still when the visitor has asked for reduced motion.
-- **Native counterpart.** `native/` holds the SwiftUI version of the pearl: `PearlView` draws it with `Canvas` in a `TimelineView`, and `PearlViewModel` uses Combine to pause it for Reduce Motion or when it leaves the screen. It needs iOS 17 or later. The page shows these files as static, highlighted HTML.
+- **Native counterpart.** `native/` holds the SwiftUI version of the pearl: `PearlView` draws it with `Canvas` in a `TimelineView`, and `PearlViewModel` uses Combine to pause it for Reduce Motion or when it leaves the screen. It needs iOS 17 or later. They are kept as reference and are no longer shown on the page.
 - **Endless sound.** `js/audio/calm-ocean-processor.js` ports Aethéa's Swift generators (ocean, warm pad, wind chimes) to an `AudioWorklet`, so the sound is generated, not streamed: a few kilobytes, no file to loop, no seam. `calm-ocean-engine.js` rebuilds the app's mix (per-layer reverb, master level, peak limiter). It starts only when the visitor presses the button, fades in and out, shows on the lock screen through Media Session, and on iPhone plays through the silent switch like music.
 - **Two appearances.** Obsidian is the default and Soft White follows the device setting. The switch in the header overrides either one, and the choice is remembered. Everything runs on design tokens (`css/tokens.css`).
 - **Installable.** A web app manifest and a service worker let visitors install the site and open it offline after their first visit.
