@@ -11,7 +11,6 @@ import { AmbienceToggleView } from './views/ambience-toggle-view.js';
 import { PaletteView } from './views/palette-view.js';
 import { ToastView } from './views/toast-view.js';
 import { EvolutionView } from './views/evolution-view.js';
-import { CodeView } from './views/code-view.js';
 import { GalleryView } from './views/gallery-view.js';
 import { PronounceView } from './views/pronounce-view.js';
 import { ContactView } from './views/contact-view.js';
@@ -32,7 +31,6 @@ new ToastView({ el: $('toast'), toast });
 new GalleryView({ root: $('gallery'), dialog: $('lightbox') });
 new GalleryView({ root: $('prepgoShots'), dialog: $('lightbox') });
 new EvolutionView({ root: $('evolutionView'), viewModel: new SelectionViewModel(versions, Math.max(0, versions.findIndex(v => v.status === 'Current'))) });
-new CodeView({ root: $('codeView'), viewModel: new SelectionViewModel([...$('codeView').querySelectorAll('[role="tab"]')].map(t => t.id)) });
 new ContactView({ primary: $('contactPrimary'), address: $('contactAddress'), contact });
 
 // Installable and available offline once visited (GitHub Pages serves over HTTPS).

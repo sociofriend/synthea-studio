@@ -22,7 +22,7 @@ export class EvolutionView {
     viewModel.selected.sink(v => {
       const tab = tabs[viewModel.index.value];
       panel.setAttribute('aria-labelledby', tab.id);
-      meta.innerHTML = `<span class="chip" data-status="${v.status}">${v.status}</span><code>${v.branch}</code>`;
+      meta.innerHTML = `<span class="chip" data-status="${v.status}">${v.status}</span>`;
       name.textContent = `${v.label} · ${v.name}`;
       body.textContent = v.text;
       // keep the selected tab in view by scrolling the tab strip only, never the page
