@@ -13,3 +13,4 @@ SHA-256 prefix, one-line purpose, types, imports, project types it uses; `+T` = 
 3. After editing, run `tools/codemap.py` (rescans changed files only) and commit the map with
    the change. Fix a `purpose` by hand when a file's role changes; new files with no header comment are listed.
 4. Everything in the repo is published by Pages, the map included: keep secrets out of purposes.
+- Structure questions (who uses what, dependencies): ask the graphify MCP (`.mcp.json`; graph in git-ignored `graphify-out/`). Re-run `graphify` after big changes.
