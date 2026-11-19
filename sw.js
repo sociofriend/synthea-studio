@@ -1,6 +1,6 @@
 // Offline support: the page shell is cached on install; images and fonts are cached as they are used.
 // Bump VERSION whenever files change, so returning visitors get the new release.
-const VERSION = 'synthea-2026-11-16d';
+const VERSION = 'synthea-2026-11-19a';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'css/fonts.css', 'css/tokens.css', 'css/base.css', 'css/components.css', 'css/sections.css',
@@ -12,7 +12,7 @@ const SHELL = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
@@ -22,10 +22,10 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
-  // pages: network first, so a new release shows at once; cached copy when offline
-  if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).then(res => { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); return res; })
-      .catch(() => caches.match(req).then(r => r || caches.match('index.html'))));
+  // pages, scripts and styles: network first, so HTML and code always come from the same release
+  if (req.mode === 'navigate' || /\.(js|css|webmanifest)$/.test(new URL(req.url).pathname)) {
+    e.respondWith(fetch(req, { cache: 'no-cache' }).then(res => { const copy = res.clone(); if (res.ok) caches.open(VERSION).then(c => c.put(req, copy)); return res; })
+      .catch(() => caches.match(req).then(r => r || (req.mode === 'navigate' ? caches.match('index.html') : Response.error()))));
     return;
   }
   // everything else: cache first
