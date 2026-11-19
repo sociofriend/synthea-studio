@@ -33,6 +33,10 @@
   // Apply a saved appearance before first paint, so the page never flashes the other theme.
   try { const t = localStorage.getItem('synthea.appearance'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch {}
 </script>
+<script>
+  // A new release's service worker takes over: reload once so no stale script runs against this page.
+  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) navigator.serviceWorker.addEventListener('controllerchange', () => location.reload(), { once: true });
+</script>
 <script type="module" src="js/app.js"></script>
 <!-- Visitor stats (GoatCounter, cookie-free). Site code must match the GoatCounter account. -->
 <script data-goatcounter="https://synthea.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
