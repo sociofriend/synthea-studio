@@ -30,6 +30,7 @@ new PaletteView({ root: $('swatches'), swatches, toast });
 new ToastView({ el: $('toast'), toast });
 new GalleryView({ root: $('gallery'), dialog: $('lightbox') });
 new GalleryView({ root: $('prepgoShots'), dialog: $('lightbox') });
+new GalleryView({ root: $('aetheaShots'), dialog: $('lightbox') });
 new EvolutionView({ root: $('evolutionView'), viewModel: new SelectionViewModel(versions, Math.max(0, versions.findIndex(v => v.status === 'Current'))) });
 new ContactView({ primary: $('contactPrimary'), address: $('contactAddress'), contact });
 

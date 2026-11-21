@@ -1,6 +1,6 @@
 // Offline support: the page shell is cached on install; images and fonts are cached as they are used.
 // Bump VERSION whenever files change, so returning visitors get the new release.
-const VERSION = 'synthea-2026-11-21a';
+const VERSION = 'synthea-2026-11-21b';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest',
   'css/fonts.css', 'css/tokens.css', 'css/base.css', 'css/components.css', 'css/sections.css',
