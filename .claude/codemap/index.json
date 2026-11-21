@@ -6,9 +6,9 @@
 "css/base.css": {"sha256": "f14dfd8f1b548aa5", "purpose": "Reset, typography and layout primitives."},
 "css/components.css": {"sha256": "e8e14c29d6152dc9", "purpose": "Reusable components: navigation, buttons, links, chips, swatches, toast, lightbox."},
 "css/fonts.css": {"sha256": "985e8d3d0f446140", "purpose": "Self-hosted brand faces (SIL Open Font License)."},
-"css/sections.css": {"sha256": "d62894db58d48321", "purpose": "Page sections, in page order."},
+"css/sections.css": {"sha256": "9636e80f0bcef572", "purpose": "Page sections, in page order."},
 "css/tokens.css": {"sha256": "3a8a6bba2e15d15a", "purpose": "Design tokens."},
-"index.html": {"sha256": "f35ada3f43e07560", "purpose": "The single-page site: all sections in page order."},
+"index.html": {"sha256": "4b5c17998532aebe", "purpose": "The single-page site: all sections in page order."},
 "js/app.js": {"sha256": "78331d56adfc2e75", "purpose": "Composition root: builds the view models and binds them to their views.", "imports": ["./audio/calm-ocean-engine.js", "./model/content.js", "./viewmodels/ambience-view-model.js", "./viewmodels/appearance-view-model.js", "./viewmodels/selection-view-model.js", "./viewmodels/toast-view-model.js", "./views/ambience-toggle-view.js", "./views/appearance-toggle-view.js", "./views/contact-view.js", "./views/evolution-view.js", "./views/gallery-view.js", "./views/hero-view.js", "./views/palette-view.js", "./views/pronounce-view.js", "./views/toast-view.js"]},
 "js/audio/calm-ocean-engine.js": {"sha256": "18e39b5ddd698403", "purpose": "Plays \"Calm Ocean\" from Aethéa: the generators run in an AudioWorklet, and this file builds the rest of the app's graph (Audio/SoundscapeEng", "types": ["CalmOceanEngine", "makeCalmOcean", "largeHall"]},
 "js/audio/calm-ocean-processor.js": {"sha256": "01151bcd33cf09b9", "purpose": "\"Calm Ocean\" from Aethéa, ported line for line from the app's Swift generators.", "types": ["RandomSource", "OnePoleLowpass", "StateVariableFilter", "PinkNoise", "BrownNoise", "makeTable", "read", "scaleMidi", "Ocean", "WarmPad", "WindChimes", "CalmOceanProcessor"]},
@@ -33,7 +33,7 @@
 "native/Synthea/Rendering/GraphicsContext+Pearl.swift": {"sha256": "3e08cfb6d90e450a", "purpose": "GraphicsContext drawing of the pearl (body, sheen, rim, signal) for PearlView.", "types": ["+GraphicsContext"], "imports": ["SwiftUI"]},
 "native/Synthea/ViewModels/PearlViewModel.swift": {"sha256": "0aa26732bcc9c0a1", "purpose": "Drives the pearl.", "types": ["PearlViewModel"], "imports": ["Combine", "Foundation"]},
 "native/Synthea/Views/PearlView.swift": {"sha256": "476e4b20d16377d5", "purpose": "The live Synthetic Pearl: drawn every frame while visible, still for Reduce Motion.", "types": ["PearlView"], "imports": ["SwiftUI"], "uses": ["PearlViewModel"]},
-"sw.js": {"sha256": "cc6de8a8d4ad2dc5", "purpose": "Offline support: the page shell is cached on install; images and fonts are cached as they are used."},
+"sw.js": {"sha256": "ac4f3a8c2497ec8f", "purpose": "Offline support: the page shell is cached on install; images and fonts are cached as they are used."},
 "tools/codemap.py": {"sha256": "8c47f27d3a230efa", "purpose": "Keeps .claude/codemap/index.json in step with the repo's files.", "types": ["files", "digest", "header", "title", "first_doc", "tests_of", "scan", "main"], "imports": ["hashlib"]},
 "tools/highlight-swift.py": {"sha256": "1d7ca87764255017", "purpose": "Refreshes the Swift shown on the page from native/.", "types": ["highlight", "main"], "imports": ["html", "pathlib", "re"]}
 }}
