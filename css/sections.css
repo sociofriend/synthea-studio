@@ -220,3 +220,5 @@
 .app-shots li { flex: 0 0 auto; scroll-snap-align: start; }
 .app-shots button { display: block; padding: 0; border: 0; background: none; border-radius: 12px; cursor: zoom-in; }
 .app-shots img { width: 104px; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+/* side-by-side cards with screenshots share rows, so their strips and store rows line up */
+@media (min-width: 761px) { .app-card:has(.app-shots) { grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; } .app-card:has(.app-shots) .app-shots { grid-row: 2; margin-top: 16px; } .app-card:has(.app-shots) .app-card__store { grid-row: 3; margin-top: 16px; } }
